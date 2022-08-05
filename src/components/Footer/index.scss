@@ -1,0 +1,142 @@
+@import '../../mixins';
+@import '../../variables';
+
+.Footer {
+	padding: 56px 28px;
+	display: flex;
+	background-color: $dark-main-color;
+	border-top: 2.15px solid #3C4252;
+
+	@include onMobile {
+		flex-direction: column;
+	}
+
+	&__block {
+		width: 45%;
+
+		@include onMobile {
+			width: 100%;
+
+			&:first-child > :last-child {
+				margin-bottom: 55px;
+			}
+		}
+
+		&:first-child img,
+		&:first-child ul,
+		&:first-child p {
+			margin-bottom: 12px;
+
+			@include onMobile {
+				margin-bottom: 17px;
+			}
+		}
+
+		&:last-child {
+			display: flex;
+			width: 55%;
+
+			@include onMobile {
+				width: 100%;
+				justify-content: space-between;
+			}
+		}
+	}
+
+	&__link {
+		transition: opacity 0.3s ease;
+
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+
+	&__logo {
+		max-width: 162px;
+	}
+
+	&__social-list {
+		display: flex;
+		gap: 30px;
+	}
+
+	&__social-item a {
+		display: block;
+		height: 25px;
+		transition: opacity 0.3s ease;
+
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+
+	&__social-icon * {
+		fill: $grey-color;
+	}
+
+	&__social-icon.twitter * {
+		fill: #00acee;
+	}
+
+	&__copyright {
+		width: 100%;
+		font-weight: 400;
+		font-size: 17px;
+		line-height: 25px;
+		color: #A1A4AB;
+
+		@include onMedium {
+			font-size: 13px;
+		}
+	}
+
+	&__list {
+		margin-right: 30px;
+
+		@include onMedium {
+			margin-right: 20px;
+		}
+
+		&:nth-child(2n){
+			margin-right: 90px;
+
+			@include onMedium {
+				margin-right: 60px;
+			}
+		}
+	}
+
+	&__item {
+		margin-bottom: 16px;
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 25px;
+
+		@include onMobile {
+			font-weight: 400;
+		}
+
+		@include onMedium {
+			font-size: 14px;
+		}
+
+		&:first-child {
+			margin-bottom: 25px;
+		}
+
+		& a {
+			color: $grey-color;
+			font-size: 15px;
+			font-weight: 400;
+			transition: color 0.3s ease;
+
+			&:hover {
+				color: $white-color;
+			}
+
+			@include onMedium {
+				font-size: 13px;
+			}
+		}
+	}
+}

@@ -32,10 +32,10 @@ function App() {
             path='posts/:id'
             element={<Post />}
           />
-        </Routes>  
-
-        <Footer />      
+        </Routes>       
       </div>
+      
+      <Footer /> 
     </div>
   );
 }

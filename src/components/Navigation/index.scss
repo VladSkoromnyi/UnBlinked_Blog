@@ -1,0 +1,99 @@
+@import '../../mixins';
+@import '../../variables';
+
+.Navigation {
+	padding: 0 14px;
+	margin-top: 14px;
+	display: flex;
+	align-items: center;
+	height: 62px;
+	background-color: $second-color;
+	transition: transform 0.25s ease-out;
+
+	@include onMobile {
+		position: fixed;
+		justify-content: center;
+		margin: 0;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		height: auto;
+		width: 100%;
+		transform: translateX(-100%);
+
+		&.show {
+			transform: translateX(0);
+		}
+	}
+
+	&__list {
+		display: flex;
+		justify-content: start;
+		gap: 18px;
+
+		@include onMobile {
+			flex-direction: column;
+			gap: 48px;
+		}
+	}
+
+	&__item {
+		& a {
+			padding: 7px 26px;
+			border-radius: 5px;
+			display: block;
+			color: $white-color;
+			transition: background-color 0.2s ease;
+
+			&.active {
+				background-color: $third-color;
+			}
+
+			&:hover {
+				background-color: $third-color;
+			}
+		}
+
+		@include onMobile {
+			transform: scale(1.5);
+		}
+	}
+
+	&__toggle {
+		position: absolute;
+		width: 20px;
+		height: 20px;
+		cursor: pointer;
+		visibility: hidden;
+
+		@include onMobile {
+			visibility: visible;
+		}
+
+		&.open {
+			top: 29px;
+			left: 34px;
+			background-image: url(../../assets/images/menu-icon.svg);
+		}
+
+		&.close {
+			top: 50px;
+			right: 50px;
+			transition: opacity 0.2s ease;
+
+			&:hover {
+				opacity: 0.8;
+			}
+
+			&::after {
+				display: block;
+				font-size: 46px;
+				height: 40px;
+				width: 40px;
+				color: $grey-color;
+				content: "\00d7";
+
+			}
+		}
+	}
+}

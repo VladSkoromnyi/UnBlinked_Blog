@@ -1,1 +1,44 @@
+@import './fonts';
+@import './variables';
+@import './mixins';
 
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-family: $montserrant-font;
+	background-color: $main-color;
+	color: $white-color;
+}
+
+body,
+ul,
+p,
+h1,
+h2,
+h3,
+h4 {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+.wrapper {
+	padding: 0 28px;
+
+	@include onMobile {
+		padding: 0 14px;
+	}
+}
+
+.container {
+	border-radius: 6px;
+}

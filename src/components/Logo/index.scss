@@ -1,0 +1,28 @@
+@import '../../variables';
+@import '../../mixins';
+
+.Logo {
+	position: relative;
+	height: 62px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: $second-color;
+
+	@include onMobile {
+		margin: 8px 14px 0;
+		border-radius: 6px;
+	}
+
+	&__link {
+		transition: opacity 0.3s ease;
+	
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+
+	&__image {
+		height: 36px;
+	}
+}

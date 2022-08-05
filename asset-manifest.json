@@ -1,12 +1,15 @@
 {
   "files": {
-    "main.css": "./static/css/main.31d6cfe0.css",
-    "main.js": "./static/js/main.69bd5a5f.js",
+    "main.css": "./static/css/main.3959b6e2.css",
+    "main.js": "./static/js/main.c1106c14.js",
+    "static/media/UnBlinkedLogo.png": "./static/media/UnBlinkedLogo.53a1f721c22265f01bda.png",
+    "static/media/menu-icon.svg": "./static/media/menu-icon.4b266bbf7aeb72a6347a.svg",
     "index.html": "./index.html",
-    "main.69bd5a5f.js.map": "./static/js/main.69bd5a5f.js.map"
+    "main.3959b6e2.css.map": "./static/css/main.3959b6e2.css.map",
+    "main.c1106c14.js.map": "./static/js/main.c1106c14.js.map"
   },
   "entrypoints": [
-    "static/css/main.31d6cfe0.css",
-    "static/js/main.69bd5a5f.js"
+    "static/css/main.3959b6e2.css",
+    "static/js/main.c1106c14.js"
   ]
 }

@@ -15,6 +15,7 @@ export const Navigation = () => {
 				onClick={() => toggleMenu()} 
 				className="Navigation__toggle open"
 			></div>
+			
 
 			<nav 
 				className={

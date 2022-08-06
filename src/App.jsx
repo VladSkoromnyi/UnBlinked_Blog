@@ -1,21 +1,14 @@
 import { Route, Routes } from 'react-router-dom';
-import './App.scss';
-import { Footer } from './components/Footer';
 import { Home } from './components/Home';
-import { Logo } from './components/Logo';
-import { Navigation } from './components/Navigation';
+import { Layout } from './components/Layout';
 import { Post } from './components/Post';
 import { Posts } from './components/Posts';
 
 function App() {
   return (
     <div className="App">
-
-      <Logo />
-
-      <div className="wrapper">
-        <Navigation />
-        
+      <Layout>   
+     
         <Routes>
           <Route 
             index
@@ -32,10 +25,9 @@ function App() {
             path='posts/:id'
             element={<Post />}
           />
-        </Routes>       
-      </div>
-      
-      <Footer /> 
+        </Routes>   
+            
+      </Layout>
     </div>
   );
 }

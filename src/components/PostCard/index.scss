@@ -1,0 +1,87 @@
+@import '../../mixins';
+@import '../../variables';
+
+.PostCard {
+	width:  calc( (100% - 44px) / 3 );
+	margin-bottom: 22px;
+
+	& img {
+		width: 100%;
+		border-radius: 6px 6px 0 0;
+	}
+
+	& svg {
+		width: 22px;
+		height: 22px;
+		margin-right: 7px;
+	}
+
+	&__content {
+		padding: 20px;
+	}
+
+	&__title {
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 18px;
+		margin-bottom: 13px;		
+	}
+
+	&__info {
+
+	}
+
+	&__category {
+
+	}
+
+	&__description {
+		font-size: 14px;
+		padding-bottom: 15px;
+		margin-bottom: 15px;
+		border-bottom: 0.8px solid #3B4151;
+	}
+
+	&__read {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		font-size: 13px;
+
+		& span {
+			display: flex;
+			align-items: center;
+		}
+
+		& a {
+			font-weight: 600;
+			line-height: 17px;
+			color: $third-color;
+		}
+	}
+
+	&:nth-child(3n - 1) {
+		margin-right: 22px;
+		margin-left: 22px;
+	}
+
+	@include onMobile {
+		width:  calc( (100% - 22px) / 2 );
+
+		&:nth-child(1n) {
+			margin: 0 0 22px;
+		}
+
+		&:nth-child(2n) {
+			margin-left: 22px;
+		}
+	}
+
+	@include onMediumMobile {
+		width: 100%;
+
+		&:nth-child(1n) {
+			margin: 0 0 22px;
+		}
+	}
+}

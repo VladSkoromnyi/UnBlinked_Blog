@@ -4,6 +4,12 @@
   }
 }
 
+@mixin onMediumMobile {
+  @media (max-width: 536px) {
+    @content;
+  }
+}
+
 @mixin onMobile {
   @media (max-width: 768px) {
     @content;

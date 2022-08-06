@@ -1,1 +1,20 @@
+@import '../../mixins';
+@import '../../variables';
 
+.Posts {
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		padding-top: 35px;
+
+		& svg {
+			margin: 50px;
+		}
+
+		@include onMediumMobile {
+			flex-direction: column;
+		}
+	}
+}

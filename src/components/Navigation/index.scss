@@ -7,7 +7,6 @@
 	display: flex;
 	align-items: center;
 	height: 62px;
-	background-color: $second-color;
 	transition: transform 0.25s ease-out;
 
 	@include onMobile {

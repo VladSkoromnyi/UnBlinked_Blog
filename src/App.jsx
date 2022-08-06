@@ -19,12 +19,23 @@ function App() {
           <Route
             path='posts'
             element={<Posts />}
-          />
+          >
+            <Route
+              path=':id'
+              element={<Post />}
+            />
+            <Route
+              path=':category'
+              element={<Posts />}
+            >
+              <Route
+                path=':id'
+                element={<Post />}
+              />
+            </Route>
+          </Route>
 
-          <Route
-            path='posts/:id'
-            element={<Post />}
-          />
+
         </Routes>   
             
       </Layout>

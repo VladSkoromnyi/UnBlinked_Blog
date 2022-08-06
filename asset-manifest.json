@@ -1,19 +1,18 @@
 {
   "files": {
-    "main.css": "./static/css/main.8a8c2421.css",
-    "main.js": "./static/js/main.1a742cd8.js",
-    "static/media/UnBlinkedLogo.png": "./static/media/UnBlinkedLogo.53a1f721c22265f01bda.png",
-    "static/media/Footer-logo.svg": "./static/media/Footer-logo.026aecca7c9bf4ace769e02c8dbb0afb.svg",
+    "main.css": "./static/css/main.e7146f7f.css",
+    "main.js": "./static/js/main.3213cd16.js",
+    "static/media/UnBlinked-logo.svg": "./static/media/UnBlinked-logo.026aecca7c9bf4ace769e02c8dbb0afb.svg",
     "static/media/menu-icon.svg": "./static/media/menu-icon.4b266bbf7aeb72a6347a.svg",
     "static/media/discord-brands.svg": "./static/media/discord-brands.7e85b7f6f94f4369f6ebabcdf0497767.svg",
     "static/media/twitter-brands.svg": "./static/media/twitter-brands.25e8b9aa126aa0345f9740c58f0c9bfd.svg",
     "static/media/paper-plane-solid.svg": "./static/media/paper-plane-solid.ac1f025a1fdd8d4a581523670e7340e3.svg",
     "index.html": "./index.html",
-    "main.8a8c2421.css.map": "./static/css/main.8a8c2421.css.map",
-    "main.1a742cd8.js.map": "./static/js/main.1a742cd8.js.map"
+    "main.e7146f7f.css.map": "./static/css/main.e7146f7f.css.map",
+    "main.3213cd16.js.map": "./static/js/main.3213cd16.js.map"
   },
   "entrypoints": [
-    "static/css/main.8a8c2421.css",
-    "static/js/main.1a742cd8.js"
+    "static/css/main.e7146f7f.css",
+    "static/js/main.3213cd16.js"
   ]
 }

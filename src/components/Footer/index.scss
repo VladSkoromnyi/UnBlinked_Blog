@@ -40,6 +40,10 @@
 				width: 100%;
 				justify-content: space-between;
 			}
+
+			@include onSmallMobile {
+				flex-direction: column;
+			}
 		}
 	}
 

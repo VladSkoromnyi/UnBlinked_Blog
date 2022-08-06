@@ -1,5 +1,5 @@
 import './index.scss'
-import logo from '../../assets/images/Footer-logo.svg'
+import logo from '../../assets/images/UnBlinked-logo.svg'
 import { ReactComponent as Twitter } from '../../assets/images/twitter-brands.svg'
 import { ReactComponent as Discord } from '../../assets/images/discord-brands.svg'
 import { ReactComponent as Telegram } from '../../assets/images/paper-plane-solid.svg'

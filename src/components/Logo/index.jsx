@@ -1,6 +1,6 @@
 import './index.scss'
 import { Link } from 'react-router-dom'
-import logo from '../../assets/images/UnBlinkedLogo.png'
+import logo from '../../assets/images/UnBlinked-logo.svg'
 
 export const Logo = () => {
 	return (
@@ -14,6 +14,7 @@ export const Logo = () => {
 					alt='UnBlinked' 
 					className='Logo__image'
 				/>
+					{'\n'}Blog
 			</Link>
 		</div>
 	)

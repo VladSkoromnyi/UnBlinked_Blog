@@ -2,7 +2,6 @@ import { Footer } from "../Footer"
 import { Logo } from "../Logo"
 import { Navigation } from "../Navigation"
 
-
 export const Layout = ({ children }) => {
 	return (
 		<>

@@ -15,7 +15,16 @@
 	}
 
 	&__link {
+		font-family: "Inter", sans-serif;
+		font-size: 29.7px;
+		line-height: 50px;
+		font-weight: 500;
+		color: #fff;
 		transition: opacity 0.3s ease;
+
+		@include onSmallMobile {
+			font-size: 24px;
+		}
 	
 		&:hover {
 			opacity: 0.8;
@@ -23,6 +32,14 @@
 	}
 
 	&__image {
-		height: 36px;
+		width: 181px;
+
+		@include onMobile {
+			width: 158px;
+		}
+
+		@include onSmallMobile {
+			width: 126px;
+		}
 	}
 }

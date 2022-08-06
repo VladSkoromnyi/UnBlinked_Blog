@@ -23,7 +23,11 @@ export const Posts = () => {
 			<ul className="Posts__list">
 				{
 					posts.length === 0
-						? <TailSpin color='#7367F0' width={100} />
+						? <TailSpin 
+								className='loader' 
+								color='#7367F0' 
+								width={100} 
+							/>
 						:	posts?.map((item, i) => {
 								const {
 									id,

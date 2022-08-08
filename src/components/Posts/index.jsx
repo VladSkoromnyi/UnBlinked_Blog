@@ -7,7 +7,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { fetchPosts } from '../../asyncActions/posts'
 
 export const Posts = () => {
-
 	const dispatch = useDispatch()
 	const posts = useSelector(state => state.posts.posts)
 	const currentPage = useSelector(state => state.posts.currentPage)

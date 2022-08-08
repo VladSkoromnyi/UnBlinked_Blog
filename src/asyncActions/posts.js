@@ -1,6 +1,6 @@
 import { BASE_URL } from "../api/api"
 import { addAllPostsAction } from "../store/postsReduser"
-// import { v4 as uuidv4 } from 'uuid'
+import { v4 as uuidv4 } from 'uuid'
 
 export const fetchPosts = (page, size) => {
 	return async dispatch => {
@@ -9,7 +9,7 @@ export const fetchPosts = (page, size) => {
 				.then(response => response.json())
 				.then(json => dispatch(addAllPostsAction(
 					json._embedded.articles.map((item, i) => {
-						return { ...item, id: i + '-UnBlinked'} 
+						return { ...item, id: uuidv4()} 
 					})
 				)))
 		} catch (error) {

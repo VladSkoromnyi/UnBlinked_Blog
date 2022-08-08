@@ -62,7 +62,7 @@ export const PostCard = ({
 						<Comment />{`${views} Comments`}
 					</span>
 					<Link 
-						to={id}
+						to={`/posts/${id}`}
 					>
 						Read more	
 					</Link>					

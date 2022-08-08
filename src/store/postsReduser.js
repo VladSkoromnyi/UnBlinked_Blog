@@ -22,7 +22,7 @@ export const postsReducer = (state = initialState, action) => {
 		case SET_CURRENT_POST:
 			return {
 				...state,
-				currentPost: { ...action.payload },
+				currentPost: state.posts.flat().find(item => item.id === action.payload),
 			}	
 		
 		case PREV_POSTS_PAGE:

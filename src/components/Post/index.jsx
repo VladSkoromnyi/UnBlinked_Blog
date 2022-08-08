@@ -7,13 +7,11 @@ import { useEffect } from 'react'
 export const Post = () => {
 	const { id } = useParams()
 	const dispatch = useDispatch()
-	const posts = useSelector(state => state.posts.posts)
 	const post = useSelector(state => state.posts.currentPost)
-	const currentPost = posts?.flat().find(item => item.id === id)
 
 	useEffect(() => {
-		dispatch(setCurrentPostsAction(currentPost))
-	}, [currentPost, dispatch])
+		dispatch(setCurrentPostsAction(id))
+	}, [id, dispatch])
 
 	console.log(post);
 
@@ -42,7 +40,7 @@ export const Post = () => {
 							/>
 							by
 							<span>
-								{currentPost.writer}
+								{post?.writer}
 							</span>
 						</div>
 						<div className="date">
@@ -50,8 +48,6 @@ export const Post = () => {
 						</div>
 					</div>					
 				</div>
-
-
 			</div>
 	)
 }

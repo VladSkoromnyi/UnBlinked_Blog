@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.8efa7ec6.css",
-    "main.js": "./static/js/main.a40fadc6.js",
+    "main.js": "./static/js/main.5323d605.js",
     "static/media/UnBlinked-logo.svg": "./static/media/UnBlinked-logo.026aecca7c9bf4ace769e02c8dbb0afb.svg",
     "static/media/menu-icon.svg": "./static/media/menu-icon.4b266bbf7aeb72a6347a.svg",
     "static/media/comment.svg": "./static/media/comment.ac99fe4ace7abba675982caf20376f15.svg",
@@ -10,10 +10,10 @@
     "static/media/paper-plane-solid.svg": "./static/media/paper-plane-solid.ac1f025a1fdd8d4a581523670e7340e3.svg",
     "index.html": "./index.html",
     "main.8efa7ec6.css.map": "./static/css/main.8efa7ec6.css.map",
-    "main.a40fadc6.js.map": "./static/js/main.a40fadc6.js.map"
+    "main.5323d605.js.map": "./static/js/main.5323d605.js.map"
   },
   "entrypoints": [
     "static/css/main.8efa7ec6.css",
-    "static/js/main.a40fadc6.js"
+    "static/js/main.5323d605.js"
   ]
 }

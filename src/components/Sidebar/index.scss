@@ -1,1 +1,31 @@
+@import '../../mixins';
+@import '../../variables';
 
+.Sidebar {
+	width: 30%;
+	padding: 35px 0 0;
+
+	&__block {
+		margin-bottom: 35px;
+
+		&:last-child {
+			font-family: $notosans-font;
+		}
+	}
+
+	&__title {
+		font-weight: 500;
+		font-size: 13px;
+		line-height: 25px;
+		letter-spacing: 0.7px;
+		text-transform: uppercase;
+		color: $grey-color;
+		margin-bottom: 12px;
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 22px;
+	}
+}

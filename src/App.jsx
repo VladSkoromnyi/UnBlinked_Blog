@@ -1,8 +1,10 @@
-import { Route, Routes } from 'react-router-dom';
-import { Home } from './components/Home';
-import { Layout } from './components/Layout';
-import { Post } from './components/Post';
-import { Posts } from './components/Posts';
+import { Route, Routes } from 'react-router-dom'
+import { Home } from './components/Home'
+import { Layout } from './components/Layout'
+import { Post } from './components/Post'
+import { Posts } from './components/Posts'
+import { Sidebar } from './components/Sidebar'
+import './App.scss'
 
 function App() {
   return (
@@ -17,25 +19,31 @@ function App() {
           />
 
           <Route
-            path='posts'
+            path='posts/'
+            element={
+            <div className='App__content'>
+              <Posts />
+              <Sidebar />
+            </div>
+            }
+          />
+          <Route
+            path='posts/:id'
+            element={
+              <div className='App__content'>
+                <Post />
+                <Sidebar />
+              </div>
+              }
+          />
+          <Route
+            path='post/:category'
             element={<Posts />}
-          >
-            <Route
-              path=':id'
-              element={<Post />}
-            />
-            <Route
-              path=':category'
-              element={<Posts />}
-            >
-              <Route
-                path=':id'
-                element={<Post />}
-              />
-            </Route>
-          </Route>
-
-
+          />
+          <Route
+            path='post/:category/:id'
+            element={<Post />}
+          />
         </Routes>   
             
       </Layout>

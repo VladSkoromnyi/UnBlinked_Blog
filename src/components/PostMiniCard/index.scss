@@ -1,0 +1,35 @@
+@import '../../mixins';
+@import '../../variables';
+
+.PostMiniCard {
+
+	& a {
+		display: flex;
+		gap: 22px;
+	}
+
+	&__image {
+		max-width: 107px;
+		border-radius: 6px;
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		font-size: 15px;
+		line-height: 23px;
+	}
+
+	&__title {
+		font-weight: 600;
+		color: $white-color;
+	}
+
+	&__date {
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 23px;
+		color: $grey-color;
+	}
+}

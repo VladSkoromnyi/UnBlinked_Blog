@@ -2,15 +2,16 @@
 @import '../../variables';
 
 .Posts {
+	width: 70%;
 
 	&__list {
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: center;
+		justify-content: flex-start;
 		padding-top: 35px;
 
 		& svg.loader {
-			margin: 50px;
+			margin: 50px auto;
 		}
 
 		@include onMediumMobile {

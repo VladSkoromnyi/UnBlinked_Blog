@@ -1,13 +1,21 @@
 import './index.scss'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
+import { setCurrentPostsAction } from '../../store/postsReduser'
+import { useEffect } from 'react'
 
 export const Post = () => {
 	const { id } = useParams()
+	const dispatch = useDispatch()
 	const posts = useSelector(state => state.posts.posts)
+	const post = useSelector(state => state.posts.currentPost)
 	const currentPost = posts?.flat().find(item => item.id === id)
 
-	console.log(currentPost);
+	useEffect(() => {
+		dispatch(setCurrentPostsAction(currentPost))
+	}, [currentPost, dispatch])
+
+	console.log(post);
 
 	const handleDate = (d) => {
 		const fullDate = new Date(d).toDateString()
@@ -24,7 +32,7 @@ export const Post = () => {
 
 				<div className="Post__content">
 					<h4 className='PostCard__title Post__title'>
-						{currentPost.title}
+						{post?.title}
 					</h4>
 					<div className="PostCard__info">
 						<div className="writer">
@@ -38,7 +46,7 @@ export const Post = () => {
 							</span>
 						</div>
 						<div className="date">
-							{handleDate(currentPost.created)}
+							{handleDate(post?.created)}
 						</div>
 					</div>					
 				</div>

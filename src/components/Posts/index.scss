@@ -4,18 +4,29 @@
 .Posts {
 	width: 70%;
 
+	@include onSmall {
+		width: 100%;
+	}
+
 	&__list {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: flex-start;
 		padding-top: 35px;
 
-		& svg.loader {
-			margin: 50px auto;
-		}
-
 		@include onMediumMobile {
 			flex-direction: column;
+		}
+	}
+
+	&__pagination {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 80px 0 100px;
+
+		@include onMobile {
+			margin: 60px 0 0;
 		}
 	}
 }

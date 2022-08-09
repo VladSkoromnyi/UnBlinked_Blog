@@ -10,6 +10,8 @@ export const PostCard = ({
 	created,
 	category,
 	body,
+	image,
+	userImage,
 }) => {
 
 	const handleDate = (d) => {
@@ -21,10 +23,11 @@ export const PostCard = ({
 	return (
 		<li
 			className='PostCard container'
+			key={id}
 		>
 			<img 
 				alt='test'
-				src='https://unblinked-blog.s3.ap-northeast-2.amazonaws.com/e1150e77-f8e8-4516-be23-612eb06197b6/img_5terre.jpg'
+				src={image}
 			/>
 
 			<div className="PostCard__content">
@@ -36,7 +39,7 @@ export const PostCard = ({
 				<div className="PostCard__info">
 					<div className="writer">
 						<img 
-							src='https://unblinked-blog.s3.ap-northeast-2.amazonaws.com/profile/unblinked/simpleLogo.svg' 
+							src={userImage}
 							alt='UnBlinked' 
 						/>
 						by

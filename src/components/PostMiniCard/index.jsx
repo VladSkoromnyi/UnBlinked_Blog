@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import './index.scss'
 
-export const PostMiniCard = ({ id, title, created }) => {
+export const PostMiniCard = ({ id, title, created, image }) => {
 	const handleDate = (d) => {
 		const fullDate = new Date(d).toDateString()
 		const date = fullDate.split(' ').slice(1).join(' ')
@@ -9,10 +9,10 @@ export const PostMiniCard = ({ id, title, created }) => {
 	}
 
 	return (
-		<li className='PostMiniCard'>
-			<Link to={id} className="PostMiniCard__link">
+		<li key={id} className='PostMiniCard'>
+			<Link to={`/posts/${id}`} className="PostMiniCard__link">
 				<img 
-					src='https://unblinked-blog.s3.ap-northeast-2.amazonaws.com/e1150e77-f8e8-4516-be23-612eb06197b6/img_5terre.jpg' 
+					src={image}
 					alt='UnBlinked' 
 					className='PostMiniCard__image'
 				/>

@@ -1,7 +1,14 @@
+@import './variables';
+@import './mixins';
+
 .App {
 
 	&__content {
 		display: flex;
-		gap: 45px;		
+		gap: 45px;	
+		
+		@include onSmall {
+			flex-direction: column;
+		}
 	}
 }

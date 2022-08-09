@@ -10,43 +10,47 @@ export const Posts = () => {
 	const dispatch = useDispatch()
 	const posts = useSelector(state => state.posts.posts)
 	const currentPage = useSelector(state => state.posts.currentPage)
-	const itemsOnPage = useSelector(state => state.posts.itemsOnPage)
+	const totalPages = useSelector(state => state.posts.totalPages)
 	
 	useEffect(() => {
-		dispatch(fetchPosts(currentPage, 20))
-	}, [dispatch, currentPage, itemsOnPage])
+		dispatch(fetchPosts(currentPage))
+	}, [dispatch, currentPage])
 
-	console.log(posts.flat())
+	console.log(posts)
 
 	return (
 		<div className='Posts'>
 			<ul className="Posts__list">
 				{
-					posts?.flat().length === 0
+					posts?.length === 0
 						? <TailSpin 
-								className='loader' 
 								color='#7367F0' 
-								width={100} 
+								width={100}
+								height={100}
 							/>
-						:	posts.flat()?.map((item, i) => {
+						:	posts?.map((item, i) => {
 								const {
-									id,
+									articleId,
 									title,
 									writer,
 									views,
-									created,
+									time,
 									category,
+									s3ArticleAddress,
+									s3UserProfile
 								} = item
 
 								return (
 									<PostCard 
-										key={id}
-										id={id}
+										key={articleId}
+										id={articleId}
 										title={title}
 										writer={writer}
-										created={created}
+										created={time}
 										views={views}
 										category={category}
+										image={s3ArticleAddress}
+										userImage={s3UserProfile}
 									/>
 								)
 							})
@@ -54,7 +58,11 @@ export const Posts = () => {
 			</ul>
 			
 			<div className="Posts__pagination">
-				<Pagination />
+				{
+					totalPages > 1
+						? <Pagination />
+						: null
+				}
 			</div>
 		</div>
 	)

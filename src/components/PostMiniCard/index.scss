@@ -2,14 +2,19 @@
 @import '../../variables';
 
 .PostMiniCard {
-
 	& a {
 		display: flex;
 		gap: 22px;
+
+		&:hover h4 {
+			color: $third-color;
+		}
 	}
 
 	&__image {
-		max-width: 107px;
+		width: 107px;
+		height: 76px;
+		object-fit: cover;
 		border-radius: 6px;
 	}
 
@@ -24,6 +29,7 @@
 	&__title {
 		font-weight: 600;
 		color: $white-color;
+		transition: color 0.2s ease;
 	}
 
 	&__date {

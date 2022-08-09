@@ -16,8 +16,14 @@
   }
 }
 
-@mixin onMedium {
+@mixin onSmall {
   @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin onMedium {
+  @media (max-width: 1190px) {
     @content;
   }
 }

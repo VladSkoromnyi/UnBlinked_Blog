@@ -7,6 +7,8 @@
 
 	& img {
 		width: 100%;
+		height: 227px;
+		object-fit: cover;
 		border-radius: 6px 6px 0 0;
 	}
 
@@ -104,6 +106,18 @@
 	}
 
 	@include onMedium {
+		width:  calc( (100% - 22px) / 2 );
+
+		&:nth-child(1n) {
+			margin: 0 0 22px;
+		}
+
+		&:nth-child(2n) {
+			margin-left: 22px;
+		}
+	}
+
+	@include onSmall {
 		width:  calc( (100% - 22px) / 2 );
 
 		&:nth-child(1n) {

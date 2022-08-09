@@ -1,6 +1,55 @@
+@import '../../mixins';
+@import '../../variables';
+
 .Pagination {
+
+	&__list {
+		display: flex;
+		gap: 6px;
+	}
 	
 	&__item {
+		padding: 7px 7px 4px 8px;
+		background-color: $second-color;
+		border-radius: 50%;
 		cursor: pointer;
+
+		&.pages {
+			border-radius: 16px;
+			padding: 0;
+		}
+
+		& svg {
+			width: 18px;
+			height: 18px;
+
+			& * {
+				fill: $white-color;				
+			}
+
+			&:hover * {
+				fill: $third-color;
+			}
+		}
+
+		&-list {
+			display: flex;
+			gap: 15px;
+			padding: 5px 13px;
+
+			& li {
+				font-weight: 400;
+				font-size: 14px;
+				line-height: 21px;
+
+				&:hover {
+					color: $third-color;
+				}
+
+				&.active {
+					color: $third-color;
+				}
+			}
+		}
 	}
 }

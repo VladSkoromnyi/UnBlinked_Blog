@@ -4,7 +4,7 @@ import './index.scss'
 
 export const Sidebar = () => {
 	const posts = useSelector(state => state.posts.posts)
-	const popularPosts = posts?.flat().filter(item => item.views > 8)
+	const popularPosts = posts?.filter(item => item.views > 1)
 
 	return (
 		<div className='Sidebar'>
@@ -16,13 +16,14 @@ export const Sidebar = () => {
 				<ul className="Sidebar__list">
 					{
 						popularPosts?.slice(0, 4).map(item => {
-							const { id, title, created } = item
+							const { articleId, title, time, s3ArticleAddress } = item
 							return (
 								<PostMiniCard 
-									key={id}
-									id={id}
+									key={articleId}
+									id={articleId}
 									title={title}
-									created={created}
+									created={time}
+									image={s3ArticleAddress}
 								/>
 							)
 						})
@@ -37,14 +38,15 @@ export const Sidebar = () => {
 
 				<ul className="Sidebar__list">
 				{
-						popularPosts?.slice(0, 4).map(item => {
-							const { id, title, created } = item
+						popularPosts?.slice(2).map(item => {
+							const { articleId, title, time, s3ArticleAddress } = item
 							return (
 								<PostMiniCard 
-									key={id}
-									id={id}
+									key={articleId}
+									id={articleId}
 									title={title}
-									created={created}
+									created={time}
+									image={s3ArticleAddress}
 								/>
 							)
 						})

@@ -1,17 +1,19 @@
 import './index.scss'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import { setCurrentPostsAction } from '../../store/postsReduser'
 import { useEffect } from 'react'
+import { fetchPost, fetchPosts } from '../../asyncActions/posts'
 
 export const Post = () => {
 	const { id } = useParams()
 	const dispatch = useDispatch()
 	const post = useSelector(state => state.posts.currentPost)
+	const currentPage = useSelector(state => state.posts.currentPage)
 
 	useEffect(() => {
-		dispatch(setCurrentPostsAction(id))
-	}, [id, dispatch])
+		dispatch(fetchPosts(currentPage))
+		dispatch(fetchPost(id))
+	}, [id, dispatch, currentPage])
 
 	console.log(post);
 
@@ -44,7 +46,7 @@ export const Post = () => {
 							</span>
 						</div>
 						<div className="date">
-							{handleDate(post?.created)}
+							{handleDate(post?.time)}
 						</div>
 					</div>					
 				</div>

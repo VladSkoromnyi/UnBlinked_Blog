@@ -1,17 +1,31 @@
 import { BASE_URL } from "../api/api"
-import { addAllPostsAction } from "../store/postsReduser"
-import { v4 as uuidv4 } from 'uuid'
+import { 
+	addAllPostsAction, 
+	setCurrentPostsAction 
+} from "../store/postsReduser"
 
-export const fetchPosts = (page, size) => {
+export const fetchPosts = (page) => {
 	return async dispatch => {
 		try {
-			fetch(`${BASE_URL}?page=${page}&size=${size}`)
+			fetch(`${BASE_URL}mainpage/mainboard/${page}`)
 				.then(response => response.json())
-				.then(json => dispatch(addAllPostsAction(
-					json._embedded.articles.map((item, i) => {
-						return { ...item, id: uuidv4()} 
-					})
-				)))
+				.then(json => dispatch(addAllPostsAction({
+					articles: json.articlceList,
+					totalPages: json.maxPages,
+				})))
+		} catch (error) {
+			console.error('Error', error)
+		}
+	}
+}
+
+
+export const fetchPost = (id) => {
+	return async dispatch => {
+		try {
+			fetch(`${BASE_URL}articlepage/${id}`)
+				.then(response => response.json())
+				.then(json => dispatch(setCurrentPostsAction(json)))
 		} catch (error) {
 			console.error('Error', error)
 		}

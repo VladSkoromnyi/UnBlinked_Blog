@@ -3,10 +3,12 @@ const initialState = {
 	currentPost: {},
 	totalPages: 8,
 	currentPage: 0,
+	currentCategory: 'unblinked'
 }
 
 const GET_POSTS = 'GET_POSTS'
 const FILTER_BY_CATEGORY = 'FILTER_BY_CATEGORY'
+const SET_CURRENT_CATEGORY = 'SET_CURRENT_CATEGORY'
 const SET_CURRENT_POST = 'SET_CURRENT_POST'
 const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE'
 
@@ -15,15 +17,21 @@ export const postsReducer = (state = initialState, action) => {
     case GET_POSTS:
       return {
 				...state,
-				posts: action.payload.articles,
+				posts: [ ...action.payload.articles ],
 				// totalPages: action.payload.totalPages,
 			}
 
 		case FILTER_BY_CATEGORY:
 			return {
 				...state,
-				posts: [ ...state.posts.filter(({ category }) => category ? category.includes(action.payload) : null) ],
+				posts: state.posts.filter(({ category }) => category ? category.includes(action.payload) : null),
 			}	
+		
+		case SET_CURRENT_CATEGORY:
+			return {
+				...state,
+				currentCategory: action.payload,
+			}
 		
 		case SET_CURRENT_PAGE:
 			return {
@@ -44,5 +52,6 @@ export const postsReducer = (state = initialState, action) => {
 
 export const addAllPostsAction = (payload) => ({ type: GET_POSTS, payload})
 export const filterByCategoryAction = (payload) => ({ type: FILTER_BY_CATEGORY, payload})
+export const setCurrentCategoryAction = (payload) => ({ type: SET_CURRENT_CATEGORY, payload})
 export const setCurrentPostsAction = (payload) => ({ type: SET_CURRENT_POST, payload})
 export const setCurrentPageAction = (payload) => ({ type: SET_CURRENT_PAGE, payload})

@@ -5,16 +5,23 @@ import { TailSpin } from  'react-loader-spinner'
 import { Pagination } from '../Pagination'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchPosts } from '../../asyncActions/posts'
+import { filterByCategoryAction } from '../../store/postsReduser'
 
 export const Posts = () => {
 	const dispatch = useDispatch()
 	const posts = useSelector(state => state.posts.posts)
 	const currentPage = useSelector(state => state.posts.currentPage)
 	const totalPages = useSelector(state => state.posts.totalPages)
+	const currentCategory = useSelector(state => state.posts.currentCategory)
 	
 	useEffect(() => {
-		dispatch(fetchPosts(currentPage))
-	}, [dispatch, currentPage])
+		if (currentCategory) {
+			dispatch(fetchPosts(currentPage))
+			dispatch(filterByCategoryAction(currentCategory))
+		} else {
+			dispatch(fetchPosts(currentPage))
+		}
+	}, [dispatch, currentPage, currentCategory])
 
 	console.log(posts)
 

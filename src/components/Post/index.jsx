@@ -1,8 +1,10 @@
 import './index.scss'
 import { useDispatch, useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { useEffect } from 'react'
 import { fetchPost, fetchPosts } from '../../asyncActions/posts'
+import { ReactComponent as Bookmark } from '../../assets/images/bookmark.svg'
+import { ReactComponent as Comment } from '../../assets/images/comment.svg'
 
 export const Post = () => {
 	const { id } = useParams()
@@ -21,10 +23,12 @@ export const Post = () => {
 		return `${date}`
 	}
 
+	console.log(post);
+
 	return (
 			<div className='Post container'>
 				<img 
-					src="https://unblinked-blog.s3.ap-northeast-2.amazonaws.com/e1150e77-f8e8-4516-be23-612eb06197b6/img_5terre.jpg" 
+					src={post?.s3Thumbnail}
 					alt="UnBlinked" 
 				/>
 
@@ -35,7 +39,7 @@ export const Post = () => {
 					<div className="PostCard__info">
 						<div className="writer">
 							<img 
-								src='https://unblinked-blog.s3.ap-northeast-2.amazonaws.com/profile/unblinked/simpleLogo.svg' 
+								src={post?.s3UserProfile}
 								alt='UnBlinked' 
 							/>
 							by
@@ -48,7 +52,7 @@ export const Post = () => {
 						</div>
 					</div>	
 
-					<ul className="PostCard__category">
+					<ul className="PostCard__category Post__category">
 						{
 							post?.category?.map(item => {
 								return (
@@ -61,7 +65,31 @@ export const Post = () => {
 								)
 							})
 						}
-					</ul>				
+					</ul>		
+
+					<div className="Post__text">
+						{post?.text}	
+					</div>	
+
+					<div className="PostCard__description">
+						
+					</div>
+
+					<p className="PostCard__read Post__read">
+						<span>
+							<span>
+								<Comment />{`${post?.views}`}
+							</span>
+							<span>
+								<Bookmark />{`${post?.views}`}
+							</span>
+						</span>
+						<Link
+							to={`/posts/${id}`}
+						>
+							Read more	
+						</Link>					
+					</p>
 				</div>
 			</div>
 	)

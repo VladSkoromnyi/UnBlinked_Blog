@@ -81,7 +81,6 @@ export const PostCard = ({
 						Read more	
 					</Link>					
 				</p>
-
 			</div>
 		</li>
 	)

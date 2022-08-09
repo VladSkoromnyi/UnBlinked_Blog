@@ -5,6 +5,16 @@
 	width: 70%;
 	height: max-content;
 	margin-top: 35px;
+	margin-bottom: 200px;
+	
+	@include onSmall {
+		width: 100%;
+		margin-bottom: 100px;
+	}
+
+	&__category {
+		margin-bottom: 18px !important;
+	}
 
 	&__title {
 		margin-bottom: 17px;
@@ -19,5 +29,22 @@
 		max-height: 200px;
 		object-fit: cover;
 		border-radius: 6px 6px 0 0;
+	}
+
+	&__read {
+
+		& span span {
+			margin-right: 20px;
+		}
+
+		& span svg {
+			margin-right: 10px;
+			width: 27px;
+			height: 22px;
+
+			& * {
+				fill: $white-color;
+			}
+		}
 	}
 }

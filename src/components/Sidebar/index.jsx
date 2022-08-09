@@ -5,6 +5,9 @@ import './index.scss'
 export const Sidebar = () => {
 	const posts = useSelector(state => state.posts.posts)
 	const popularPosts = posts?.filter(item => item.views > 1)
+	const categories = useSelector(state => state.posts.categories)
+
+	console.log(categories);
 
 	return (
 		<div className='Sidebar'>
@@ -60,7 +63,7 @@ export const Sidebar = () => {
 				</h4>			
 
 				<ul className="Sidebar__list">
-					
+
 				</ul>		
 			</div>
 		</div>

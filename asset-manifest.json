@@ -1,19 +1,22 @@
 {
   "files": {
-    "main.css": "./static/css/main.8efa7ec6.css",
-    "main.js": "./static/js/main.5323d605.js",
+    "main.css": "./static/css/main.54466cef.css",
+    "main.js": "./static/js/main.d95955ec.js",
     "static/media/UnBlinked-logo.svg": "./static/media/UnBlinked-logo.026aecca7c9bf4ace769e02c8dbb0afb.svg",
     "static/media/menu-icon.svg": "./static/media/menu-icon.4b266bbf7aeb72a6347a.svg",
     "static/media/comment.svg": "./static/media/comment.ac99fe4ace7abba675982caf20376f15.svg",
     "static/media/discord-brands.svg": "./static/media/discord-brands.7e85b7f6f94f4369f6ebabcdf0497767.svg",
     "static/media/twitter-brands.svg": "./static/media/twitter-brands.25e8b9aa126aa0345f9740c58f0c9bfd.svg",
+    "static/media/bookmark.svg": "./static/media/bookmark.882f1f60c97c700f54368f19e6bfe124.svg",
+    "static/media/chevron-left.svg": "./static/media/chevron-left.db9f94f643563e9d225f56f912c9c2a2.svg",
+    "static/media/chevron-right.svg": "./static/media/chevron-right.32e4d60cd30dc7a18f8fc4da52d006ed.svg",
     "static/media/paper-plane-solid.svg": "./static/media/paper-plane-solid.ac1f025a1fdd8d4a581523670e7340e3.svg",
     "index.html": "./index.html",
-    "main.8efa7ec6.css.map": "./static/css/main.8efa7ec6.css.map",
-    "main.5323d605.js.map": "./static/js/main.5323d605.js.map"
+    "main.54466cef.css.map": "./static/css/main.54466cef.css.map",
+    "main.d95955ec.js.map": "./static/js/main.d95955ec.js.map"
   },
   "entrypoints": [
-    "static/css/main.8efa7ec6.css",
-    "static/js/main.5323d605.js"
+    "static/css/main.54466cef.css",
+    "static/js/main.d95955ec.js"
   ]
 }

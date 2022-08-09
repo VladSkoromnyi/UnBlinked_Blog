@@ -3,6 +3,13 @@ const initialState = {
 	currentPost: {},
 	totalPages: 8,
 	currentPage: 0,
+	categories: [
+		'UnBlinked News',
+		'Bitcoin Wiki',
+		'Crypto Wiki',
+		'Trader\'s Guide',
+		'Trending',
+	]
 }
 
 const GET_POSTS = 'GET_POSTS'

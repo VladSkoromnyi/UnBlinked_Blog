@@ -60,7 +60,7 @@ export const Sidebar = () => {
 				</h4>			
 
 				<ul className="Sidebar__list">
-
+					
 				</ul>		
 			</div>
 		</div>

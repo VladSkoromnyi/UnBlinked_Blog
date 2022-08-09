@@ -10,8 +10,6 @@ export const Pagination = () => {
 	const currentPage = useSelector(state => state.posts.currentPage)
 	const pages = Array.from({ length: totalPages}, (_, index) => index++)
 
-	console.log(pages);
-
 	return (
 		<div className='Pagination'>
 			<ul className='Pagination__list'>

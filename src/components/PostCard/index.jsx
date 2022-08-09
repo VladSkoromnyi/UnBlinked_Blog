@@ -52,9 +52,20 @@ export const PostCard = ({
 					</div>
 				</div>
 
-				<div className="PostCard__category">
-					
-				</div>
+				<ul className="PostCard__category">
+					{
+						category?.map(item => {
+							return (
+								<li 
+									key={item}
+									className={item}
+								>
+									{item}
+								</li>
+							)
+						})
+					}
+				</ul>
 
 				<p className="PostCard__description">
 					{body?.slice(0, 70)}...

@@ -15,8 +15,6 @@ export const Post = () => {
 		dispatch(fetchPost(id))
 	}, [id, dispatch, currentPage])
 
-	console.log(post);
-
 	const handleDate = (d) => {
 		const fullDate = new Date(d).toDateString()
 		const date = fullDate.split(' ').slice(1).join(' ')
@@ -48,7 +46,22 @@ export const Post = () => {
 						<div className="date">
 							{handleDate(post?.time)}
 						</div>
-					</div>					
+					</div>	
+
+					<ul className="PostCard__category">
+						{
+							post?.category?.map(item => {
+								return (
+									<li 
+										key={item}
+										className={item}
+									>
+										{item}
+									</li>
+								)
+							})
+						}
+					</ul>				
 				</div>
 			</div>
 	)

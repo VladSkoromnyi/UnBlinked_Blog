@@ -37,8 +37,13 @@ function App() {
               }
           />
           <Route
-            path='post/:category'
-            element={<Posts />}
+            path='posts/:category'
+            element={
+              <>
+                <Sidebar />
+                <Posts />
+              </>
+            }
           />
           <Route
             path='post/:category/:id'

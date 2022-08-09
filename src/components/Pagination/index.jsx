@@ -32,6 +32,7 @@ export const Pagination = () => {
 									<li 
 										key={i}
 										className={currentPage === item ? 'active' : ''}
+										onClick={() => dispatch(setCurrentPageAction(item))}
 									>
 										{item + 1}
 									</li>

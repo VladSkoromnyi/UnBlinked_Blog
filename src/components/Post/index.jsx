@@ -20,7 +20,7 @@ export const Post = () => {
 	const handleDate = (d) => {
 		const fullDate = new Date(d).toDateString()
 		const date = fullDate.split(' ').slice(1).join(' ')
-		return `${date}`
+		return date
 	}
 
 	console.log(post);

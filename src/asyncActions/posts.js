@@ -19,7 +19,6 @@ export const fetchPosts = (page) => {
 	}
 }
 
-
 export const fetchPost = (id) => {
 	return async dispatch => {
 		try {

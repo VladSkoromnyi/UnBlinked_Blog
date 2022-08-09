@@ -1,24 +1,27 @@
 {
   "files": {
-    "main.css": "./static/css/main.35033294.css",
-    "main.js": "./static/js/main.7fc51f3d.js",
+    "main.css": "./static/css/main.9f06d9e8.css",
+    "main.js": "./static/js/main.f363df1e.js",
     "static/media/UnBlinked-logo.svg": "./static/media/UnBlinked-logo.026aecca7c9bf4ace769e02c8dbb0afb.svg",
     "static/media/shopping-cart.svg": "./static/media/shopping-cart.b60ecc36804a6b7cfefd8d9503cc4e82.svg",
+    "static/media/hash.svg": "./static/media/hash.636bf31fa8225b3b094de8ae2c0cbfd8.svg",
     "static/media/watch.svg": "./static/media/watch.5f71ff2a8cd88b40b40da6f5d656f1d9.svg",
     "static/media/menu-icon.svg": "./static/media/menu-icon.4b266bbf7aeb72a6347a.svg",
     "static/media/comment.svg": "./static/media/comment.ac99fe4ace7abba675982caf20376f15.svg",
+    "static/media/command.svg": "./static/media/command.4784c86727c4ce0a7964406e4297662e.svg",
     "static/media/discord-brands.svg": "./static/media/discord-brands.7e85b7f6f94f4369f6ebabcdf0497767.svg",
+    "static/media/video.svg": "./static/media/video.0f7c3d25506a020e6260cce7f3b8ee7e.svg",
     "static/media/twitter-brands.svg": "./static/media/twitter-brands.25e8b9aa126aa0345f9740c58f0c9bfd.svg",
     "static/media/bookmark.svg": "./static/media/bookmark.882f1f60c97c700f54368f19e6bfe124.svg",
     "static/media/chevron-left.svg": "./static/media/chevron-left.db9f94f643563e9d225f56f912c9c2a2.svg",
     "static/media/chevron-right.svg": "./static/media/chevron-right.32e4d60cd30dc7a18f8fc4da52d006ed.svg",
     "static/media/paper-plane-solid.svg": "./static/media/paper-plane-solid.ac1f025a1fdd8d4a581523670e7340e3.svg",
     "index.html": "./index.html",
-    "main.35033294.css.map": "./static/css/main.35033294.css.map",
-    "main.7fc51f3d.js.map": "./static/js/main.7fc51f3d.js.map"
+    "main.9f06d9e8.css.map": "./static/css/main.9f06d9e8.css.map",
+    "main.f363df1e.js.map": "./static/js/main.f363df1e.js.map"
   },
   "entrypoints": [
-    "static/css/main.35033294.css",
-    "static/js/main.7fc51f3d.js"
+    "static/css/main.9f06d9e8.css",
+    "static/js/main.f363df1e.js"
   ]
 }

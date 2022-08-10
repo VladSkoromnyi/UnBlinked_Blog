@@ -92,8 +92,7 @@
 		}
 
 		&.posts:hover > .Navigation__drop-list {
-			transform: scaleY(1);
-			transform: translateY(0);
+			transform: translateY(0) scaleZ(1);
 			opacity: 1;
 		}
 	}
@@ -103,8 +102,7 @@
 		margin: 10px 0 0;
 		border: 1px solid #3B4151;
 		transition: all 0.2s ease-in;
-		transform: scaleY(0);
-		transform: translateY(-10px);
+		transform: translateY(-10px) scaleZ(0);
 		opacity: 0;
 
 		@include onMobile {

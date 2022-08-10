@@ -1,10 +1,13 @@
 import './index.scss'
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink, Link, useLocation } from 'react-router-dom'
 import { useState } from 'react'
 import logo from '../../assets/images/UnBlinked-logo.svg'
 
 export const Navigation = () => {
 	const [isShowMenu, setIsShowMenu] = useState(false)
+	const location = useLocation()
+	const isLocationCategory = location.pathname.includes('posts/category')
+		|| location.pathname.includes('posts')
 
 	const toggleMenu = () => {
 		setIsShowMenu(!isShowMenu)
@@ -54,8 +57,8 @@ export const Navigation = () => {
 					</li>
 					<li className='Navigation__item posts'>
 						<NavLink
-							to='posts'
-							className={({ isActive }) => isActive ? 'active' : ''}
+							to='posts/list'
+							className={({ isActive }) => isActive || isLocationCategory ? 'active' : ''}
 						>
 							<span>
 								Posts
@@ -65,7 +68,7 @@ export const Navigation = () => {
 						<ul className='Navigation__drop-list container'>
 							<li className='Navigation__drop-item'>
 								<NavLink 
-									to='category'
+									to='posts/category'
 									className={({ isActive }) => isActive ? 'drop-active' : ''}
 									onClick={() => toggleMenu()} 
 								>
@@ -76,7 +79,7 @@ export const Navigation = () => {
 							</li>
 							<li className='Navigation__drop-item'>
 								<NavLink 
-									to='posts'
+									to='posts/list'
 									className={({ isActive }) => isActive ? 'drop-active' : ''}
 									onClick={() => toggleMenu()} 
 								>
@@ -90,6 +93,5 @@ export const Navigation = () => {
 				</ul>
 			</nav>		
 		</>
-
 	)
 }

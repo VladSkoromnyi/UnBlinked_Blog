@@ -4,6 +4,10 @@
 .PostsCategory {
 	width: 70%;
 
+	& h2 {
+		margin-top: 35px;
+	}
+
 	@include onSmall {
 		width: 100%;
 	}

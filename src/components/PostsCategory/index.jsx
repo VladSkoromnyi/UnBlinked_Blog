@@ -5,23 +5,23 @@ import { useDispatch, useSelector } from 'react-redux'
 import { fetchPosts } from '../../redux/asyncActions/posts'
 import { Pagination } from '../Pagination'
 import { PostCard } from '../PostCard'
+import { useParams } from 'react-router-dom'
 
 export const PostsCategory = () => {
 	const dispatch = useDispatch()
+	const { category } = useParams() 
 	const posts = useSelector(state => state.posts.posts)
 	const currentPage = useSelector(state => state.posts.currentPage)
-	const currentCategory = useSelector(state => state.posts.currentCategory)
 	const totalPages = useSelector(state => state.posts.totalPages)
 	
 	useEffect(() => {
-			dispatch(fetchPosts(currentPage))
-	}, [dispatch, currentPage])
-	
-	console.log(posts);
+			dispatch(fetchPosts(currentPage, category))
+	}, [dispatch, currentPage,category])
 
 	return (
 		<div className='PostsCategory'>
-			<h2>{currentCategory}</h2>
+			<h2>{category}</h2>
+
 			<ul className="Posts__list">
 				{
 					posts?.length === 0

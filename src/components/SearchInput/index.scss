@@ -1,0 +1,24 @@
+@import '../../variables';
+@import '../../mixins';
+
+.SearchInput {
+	display: block;
+	background-color: transparent;
+	height: max-content;
+
+	& input {
+		background-color: $second-color;
+		padding: 8px 15px;
+		border: none;
+		font-size: 24px;
+		line-height: 47px;
+		width: 100%;
+		display: block;
+		color: $white-color;
+		border-radius: 6px;
+
+		&::placeholder {
+			color: $grey-color;
+		}
+	}
+}

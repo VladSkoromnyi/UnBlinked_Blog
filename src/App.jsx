@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import { Home } from './components/Home'
 import { Layout } from './components/Layout'
 import { Post } from './components/Post'
@@ -7,6 +7,7 @@ import { Sidebar } from './components/Sidebar'
 import './App.scss'
 import { Header } from './components/Header'
 import { PostsCategory } from './components/PostsCategory'
+import { SearchBlock } from './components/SearchBlock'
 
 function App() {
 
@@ -27,6 +28,10 @@ function App() {
           />
           <Route
             path='posts/'
+            element={<Navigate to='list' replace/>}
+          />
+          <Route
+            path='posts/list'
             element={
             <div className='App__content'>
               <Posts />
@@ -35,12 +40,27 @@ function App() {
             }
           />
           <Route
-            path='category'
+            path='posts/category'
             element={
-            <div className='App__content flex-reverse'>
-              <Sidebar />
-              <PostsCategory />
-            </div>
+              <>
+                <SearchBlock />
+                <div className='App__content flex-reverse'>
+                  <Sidebar />
+                  <PostsCategory />
+                </div>            
+              </>
+            }
+          />
+          <Route
+            path='posts/category/:category'
+            element={
+            <>
+              <SearchBlock />
+              <div className='App__content flex-reverse'>
+                <Sidebar />
+                <PostsCategory />
+              </div>            
+            </>
             }
           />
           <Route

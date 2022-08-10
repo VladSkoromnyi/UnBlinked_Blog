@@ -1,0 +1,72 @@
+@import '../../variables';
+@import '../../mixins';
+
+.SearchBlock {
+	margin-top: 23px;
+	height: 250px;
+	background: rgba(115, 103, 240, 0.12);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	@include onMobile {
+		display: block;
+		background-color: transparent;
+		height: max-content;
+	}
+
+	& h3 {
+		font-weight: 500;
+		font-size: 29.637px;
+		line-height: 36px;
+		color: $third-color;
+
+		@include onMobile {
+			display: none;
+		}
+	}
+
+	& p {
+		font-weight: 400;
+		font-size: 17.2883px;
+		line-height: 26px;
+		color: #6E6B7B;
+
+		@include onMobile {
+			display: none;
+		}
+	}
+
+	& input {
+		margin-top: 30px;
+		padding: 10px;
+		width: 700px;
+		background: #FFFFFF;
+		border: 1.23488px solid #D8D6DE;
+		border-radius: 6.17438px;
+		font-weight: 400;
+		font-size: 14.8185px;
+		line-height: 30px;
+		color: #343336;
+
+		@include onSmall {
+			width: 500px;
+		}
+
+		@include onMobile {
+			background-color: $second-color;
+			padding: 15px 30px;
+			border: none;
+			font-size: 24px;
+			line-height: 47px;
+			width: 100%;
+			display: block;
+			color: $white-color;
+		}
+
+		&::placeholder {
+			color: $grey-color;
+		}
+	}
+}

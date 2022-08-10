@@ -41,6 +41,9 @@
 				font-weight: 400;
 				font-size: 14px;
 				line-height: 21px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
 
 				&:hover {
 					color: $third-color;

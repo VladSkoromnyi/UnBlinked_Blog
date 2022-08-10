@@ -9,6 +9,7 @@
 
 	@include onMobile {
 		height: 235px;
+		z-index: 1;
 	}
 
 	&__image {
@@ -16,6 +17,7 @@
 		display: flex;
 		align-items: flex-end;
 		background-image: url('../../assets/images/profile-bg.png');
+		background-size: cover;
 
 		@include onMobile {
 			height: 155px;
@@ -27,20 +29,37 @@
 		margin-left: 60px;
 		transform: translateY(25px);
 
+		@include onMobile {
+			margin-left: 30px;
+		}
+
 		&-text {
-			margin: 20px 40px;
+			margin: 20px 0 0 40px;
+
+			@include onMobile {
+				margin-top: 10px;
+			}
 
 			& h3 {
 				font-weight: 500;
 				font-size: 24px;
 				line-height: 29px;
 				margin-bottom: 4px;
+
+				@include onMobile {
+					font-size: 16px;
+					margin-bottom: 0;
+				}
 			}
 
 			& p {
 				font-weight: 400;
 				font-size: 14px;
 				line-height: 21px;
+
+				@include onMobile {
+					font-size: 10px;
+				}
 			}
 		}
 
@@ -49,6 +68,10 @@
 			padding: 6px 10px;
 			width: 125px;
 			border-radius: 6px;
+
+			@include onMobile {
+				max-width: 80px;
+			}
 		}
 	}
 

@@ -23,34 +23,40 @@ export const Home = () => {
 						About
 					</h4>
 					<p>
-						Tart I love sugar plum I love oat cake. Sweet ⭐️ roll caramels I love jujubes. Topping cake wafer.
-					</p>
-					<h4 className='about-title'>
-						Joined
-					</h4>
-					<p>
-						November 15, 2015
-					</p>
-					<h4 className='about-title'>
-						Lives:
-					</h4>
-					<p>
-						New York, USA
-					</p>
-					<h4 className='about-title'>
-						Email:
-					</h4>
-					<p>
-						<a href='mailto:hannah.ruiz@gmail.com'>
-							hannah.ruiz@gmail.com
-						</a>
+						The all-in-one workspace for Crypto
+						Investors. Scale your trading with us.
+						Please join UnBlinked.
 					</p>
 					<h4 className='about-title'>
 						Website
 					</h4>
 					<p>
-						<a href='http://www.pixinvent.com'>
-							www.pixinvent.com
+						<a href='https://www.unblinked.com'>
+							www.unblinked.com
+						</a>
+					</p>
+					<h4 className='about-title'>
+						Twitter
+					</h4>
+					<p>
+						<a href="https://twitter.com/UnBlinked_tweet">
+							twitter.com/UnBlinked_tweet
+						</a>
+					</p>
+					<h4 className='about-title'>
+						Discord
+					</h4>
+					<p>
+						<a href="https://discord.com/invite/hsppZSUcDu">
+							discord.com/invite/hsppZSUcDu
+						</a>
+					</p>
+					<h4 className='about-title'>
+						Manual - Docs
+					</h4>
+					<p>
+						<a href='https://www.docs.unblinked.com'>
+							www.docs.unblinked.com
 						</a>
 					</p>
 				</div>

@@ -57,11 +57,20 @@
 
 			& li.PostMiniCard {
 				font-family: $notosans-font;
-				font-size: 14px;
-				line-height: 21px;
+
+				& div.PostMiniCard__info {
+					gap: 10px;
+					justify-content: flex-start;
+				}
 				
-				& h4 {
+				& h4, & p {
 					margin: 0;
+					font-size: 13px;
+					line-height: 21px;
+				}
+
+				& p {
+					font-size: 12px;
 				}
 			}
 		}

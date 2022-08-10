@@ -1,0 +1,10 @@
+@import '../../variables';
+@import '../../mixins';
+
+.PostsCategory {
+	width: 70%;
+
+	@include onSmall {
+		width: 100%;
+	}
+}

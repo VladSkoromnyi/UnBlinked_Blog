@@ -7,13 +7,13 @@ import { ReactComponent as Command } from '../../assets/images/command.svg'
 import { ReactComponent as Hash } from '../../assets/images/hash.svg'
 import { ReactComponent as Video } from '../../assets/images/video.svg'
 import { Link } from 'react-router-dom'
-import { filterByCategoryAction } from '../../redux/store/postsReduser'
+import { fetchPosts } from '../../redux/asyncActions/posts'
 
 export const Sidebar = () => {
 	const dispatch = useDispatch()
 	const posts = useSelector(state => state.posts.posts)
 	const popularPosts = posts?.filter(item => item.views > 1)
-	// const currentPage = useSelector(state => state.posts.currentPage)
+	const currentPage = useSelector(state => state.posts.currentPage)
 
 	return (
 		<div className='Sidebar'>
@@ -26,10 +26,9 @@ export const Sidebar = () => {
 				<ul className="Sidebar__list">
 					<li className='Sidebar__item'>
 						<Link 
-							to={`/posts`}
+							to={`/posts/category/`}
 							onClick={() => {
-									// dispatch(fetchPosts(currentPage))
-									dispatch(filterByCategoryAction('unblinked'))
+									dispatch(fetchPosts(currentPage, 'unblinked'))
 								}
 							}
 						>
@@ -41,9 +40,9 @@ export const Sidebar = () => {
 					</li>
 					<li className='Sidebar__item'>
 						<Link 
-							to={`/posts`}
+							to={`/posts/category`}
 							onClick={() => {
-									dispatch(filterByCategoryAction('Bitcoin'))
+									dispatch(fetchPosts(currentPage, 'Bitcoin'))
 								}
 							}
 						>
@@ -55,8 +54,8 @@ export const Sidebar = () => {
 					</li>
 					<li className='Sidebar__item'>
 						<Link 
-							to={`/posts`}
-							onClick={() => dispatch(filterByCategoryAction('Binance'))}
+							to={`/posts/category`}
+							onClick={() => dispatch(fetchPosts(currentPage, 'Binance'))}
 						>
 							<div
 								className='crypto_wiki'
@@ -68,8 +67,8 @@ export const Sidebar = () => {
 					</li>
 					<li className='Sidebar__item'>
 						<Link 
-							to={`/posts`}
-							onClick={() => dispatch(filterByCategoryAction('Ethereum'))}
+							to={`/posts/category`}
+							onClick={() => dispatch(fetchPosts(currentPage, 'Ethereum'))}
 						>
 							<div
 								className='traders_guide'
@@ -81,8 +80,8 @@ export const Sidebar = () => {
 					</li>
 					<li className='Sidebar__item'>
 						<Link 
-							to={`/posts`}
-							onClick={() => dispatch(filterByCategoryAction('Bitcoin'))}
+							to={`/posts/category`}
+							onClick={() => dispatch(fetchPosts(currentPage, 'Bitcoin'))}
 						>
 							<div
 								className='trending'

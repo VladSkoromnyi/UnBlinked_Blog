@@ -1,29 +1,31 @@
 import './index.scss'
 import { useEffect } from 'react'
-import { PostCard } from '../PostCard'
-import { TailSpin } from  'react-loader-spinner'
-import { Pagination } from '../Pagination'
+import { TailSpin } from 'react-loader-spinner'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchPosts } from '../../redux/asyncActions/posts'
+import { Pagination } from '../Pagination'
+import { PostCard } from '../PostCard'
 
-export const Posts = () => {
+export const PostsCategory = () => {
 	const dispatch = useDispatch()
 	const posts = useSelector(state => state.posts.posts)
 	const currentPage = useSelector(state => state.posts.currentPage)
+	const currentCategory = useSelector(state => state.posts.currentCategory)
 	const totalPages = useSelector(state => state.posts.totalPages)
 	
 	useEffect(() => {
 			dispatch(fetchPosts(currentPage))
 	}, [dispatch, currentPage])
-
-	console.log(posts)
+	
+	console.log(posts);
 
 	return (
-		<div className='Posts'>
+		<div className='PostsCategory'>
+			<h2>{currentCategory}</h2>
 			<ul className="Posts__list">
 				{
 					posts?.length === 0
-						? <TailSpin 
+						? <TailSpin
 								className='loader'
 								color='#7367F0' 
 								width={100}
@@ -42,7 +44,7 @@ export const Posts = () => {
 								} = item
 
 								return (
-									<PostCard 
+									<PostCard
 										key={articleId}
 										id={articleId}
 										title={title}

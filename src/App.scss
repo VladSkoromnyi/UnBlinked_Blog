@@ -8,7 +8,13 @@
 		gap: 45px;	
 		
 		@include onSmall {
-			flex-direction: column-reverse;
+			flex-direction: column;
+		}
+
+		&.flex-reverse {
+			@include onSmall {
+				flex-direction: column-reverse;
+			}
 		}
 	}
 }

@@ -6,6 +6,7 @@ import { Posts } from './components/Posts'
 import { Sidebar } from './components/Sidebar'
 import './App.scss'
 import { Header } from './components/Header'
+import { PostsCategory } from './components/PostsCategory'
 
 function App() {
 
@@ -28,8 +29,17 @@ function App() {
             path='posts/'
             element={
             <div className='App__content'>
-              <Sidebar />
               <Posts />
+              <Sidebar />
+            </div>
+            }
+          />
+          <Route
+            path='posts/category/'
+            element={
+            <div className='App__content flex-reverse'>
+              <Sidebar />
+              <PostsCategory />
             </div>
             }
           />
@@ -37,8 +47,8 @@ function App() {
             path='posts/:id'
             element={
               <div className='App__content'>
-                <Sidebar />
                 <Post />
+                <Sidebar />
               </div>
               }
           />

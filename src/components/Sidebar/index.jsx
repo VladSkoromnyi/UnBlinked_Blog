@@ -26,7 +26,7 @@ export const Sidebar = () => {
 				<ul className="Sidebar__list">
 					<li className='Sidebar__item'>
 						<Link 
-							to={`/posts/category/`}
+							to={`/category`}
 							onClick={() => {
 									dispatch(fetchPosts(currentPage, 'unblinked'))
 								}
@@ -40,7 +40,7 @@ export const Sidebar = () => {
 					</li>
 					<li className='Sidebar__item'>
 						<Link 
-							to={`/posts/category`}
+							to={`/category`}
 							onClick={() => {
 									dispatch(fetchPosts(currentPage, 'Bitcoin'))
 								}
@@ -54,7 +54,7 @@ export const Sidebar = () => {
 					</li>
 					<li className='Sidebar__item'>
 						<Link 
-							to={`/posts/category`}
+							to={`/category`}
 							onClick={() => dispatch(fetchPosts(currentPage, 'Binance'))}
 						>
 							<div
@@ -67,7 +67,7 @@ export const Sidebar = () => {
 					</li>
 					<li className='Sidebar__item'>
 						<Link 
-							to={`/posts/category`}
+							to={`/category`}
 							onClick={() => dispatch(fetchPosts(currentPage, 'Ethereum'))}
 						>
 							<div
@@ -80,7 +80,7 @@ export const Sidebar = () => {
 					</li>
 					<li className='Sidebar__item'>
 						<Link 
-							to={`/posts/category`}
+							to={`/category`}
 							onClick={() => dispatch(fetchPosts(currentPage, 'Bitcoin'))}
 						>
 							<div

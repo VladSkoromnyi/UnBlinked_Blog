@@ -35,7 +35,7 @@ function App() {
             }
           />
           <Route
-            path='posts/category/'
+            path='category'
             element={
             <div className='App__content flex-reverse'>
               <Sidebar />

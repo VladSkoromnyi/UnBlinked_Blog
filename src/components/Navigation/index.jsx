@@ -65,7 +65,7 @@ export const Navigation = () => {
 						<ul className='Navigation__drop-list container'>
 							<li className='Navigation__drop-item'>
 								<NavLink 
-									to='posts/category'
+									to='category'
 									className={({ isActive }) => isActive ? 'drop-active' : ''}
 									onClick={() => toggleMenu()} 
 								>

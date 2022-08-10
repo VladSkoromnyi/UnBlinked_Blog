@@ -3,4 +3,75 @@
 
 .Header {
 	margin: 17px 0 23px;
+	height: 400px;
+	display: flex;
+	flex-direction: column;
+
+	&__image {
+		height: 350px;
+		display: flex;
+		align-items: flex-end;
+		background-image: url('../../assets/images/profile-bg.png');
+	}
+
+	&__info {
+		display: flex;
+		margin-left: 60px;
+		transform: translateY(25px);
+
+		&-text {
+			margin: 20px 40px;
+
+			& h3 {
+				font-weight: 500;
+				font-size: 24px;
+				line-height: 29px;
+			}
+
+			& p {
+				font-weight: 400;
+				font-size: 14px;
+				line-height: 21px;
+			}
+		}
+
+		& img {
+			background-color: #fff;
+			padding: 6px 10px;
+			width: 125px;
+			border-radius: 6px;
+		}
+	}
+
+	&__button {
+		height: 50px;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		margin-right: 15px;
+
+		& a {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 10px 22px 10px 18px;
+			font-weight: 500;
+			font-size: 14px;
+			line-height: 17px;
+			letter-spacing: 0.4px;
+			color: $white-color;
+			background-color: $third-color;
+			border-radius: 6px;
+
+			& svg {
+				width: 14px;
+				height: 14px;
+				margin-right: 11px;
+
+				& * {
+					fill: $white-color;
+				}
+			}
+		}
+	}
 }

@@ -4,6 +4,8 @@
 .Sidebar {
 	width: 30%;
 	padding: 35px 0 0;
+	display: flex;
+	flex-direction: column;
 
 	@include onSmall {
 		width: 100%;
@@ -11,6 +13,10 @@
 
 	&__block {
 		margin-bottom: 35px;
+
+		&.flex-order-1 {
+			order: 1;
+		}
 
 		&:first-child {
 			font-family: $notosans-font;

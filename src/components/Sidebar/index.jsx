@@ -28,7 +28,7 @@ export const Sidebar = () => {
 						</div>
 			}
 
-			<div className="Sidebar__block">
+			<div className={`Sidebar__block ${isLocationCategory ? '' : 'flex-order-1'}`}>
 				<h4 className='Sidebar__title'>
 					Categories
 				</h4>			

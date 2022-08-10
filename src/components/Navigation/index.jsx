@@ -47,18 +47,45 @@ export const Navigation = () => {
 							className={({ isActive }) => isActive ? 'active' : ''}
 							onClick={() => toggleMenu()} 
 						>
-							Home
+							<span>
+								Home
+							</span>
 						</NavLink>
 					</li>
-					<li className='Navigation__item'>
-
+					<li className='Navigation__item posts'>
 						<NavLink
 							to='posts'
 							className={({ isActive }) => isActive ? 'active' : ''}
-							onClick={() => toggleMenu()} 
 						>
-							Posts
+							<span>
+								Posts
+							</span>
 						</NavLink>
+
+						<ul className='Navigation__drop-list container'>
+							<li className='Navigation__drop-item'>
+								<NavLink 
+									to='posts/category'
+									className={({ isActive }) => isActive ? 'drop-active' : ''}
+									onClick={() => toggleMenu()} 
+								>
+									<span>
+										Posts - Category
+									</span>
+								</NavLink>
+							</li>
+							<li className='Navigation__drop-item'>
+								<NavLink 
+									to='posts'
+									className={({ isActive }) => isActive ? 'drop-active' : ''}
+									onClick={() => toggleMenu()} 
+								>
+									<span>
+										Posts - List
+									</span>
+								</NavLink>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</nav>		

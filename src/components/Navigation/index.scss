@@ -19,6 +19,7 @@
 		height: 100vh;
 		width: 260px;
 		transform: translateX(-200%);
+		display: block;
 
 		&.show {
 			transform: translateX(0);
@@ -38,12 +39,12 @@
 	}
 
 	&__item {
-
 		&:first-child {
 			display: none;
 
 			@include onMobile {
 				display: block;
+				width: 80%;
 			}
 		}
 
@@ -64,19 +65,66 @@
 				background-color: $third-color;
 
 				@include onMobile {
-					background: none;
-					color: $third-color;
+					background-color: $main-color;
 				}
 			}
 
-			&:hover {
-				background-color: $third-color;
+			& span {
+				transition: all 0.2s ease;
+			}
 
 				@include onMobile {
-					background: none;
-					color: $third-color;
+					color: $white-color;
+
+					&:hover span {
+						display: block;
+						transform: translateX(5px);
 				}
 			}
+		}
+
+		&.posts:hover > .Navigation__drop-list {
+			transform: scaleY(1);
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
+
+	&__drop-list {
+		position: absolute;
+		margin: 10px 0 0;
+		border: 1px solid #3B4151;
+		transition: all 0.2s ease-in;
+		transform: scaleY(0);
+		transform: translateY(-10px);
+		opacity: 0;
+
+		@include onMobile {
+			border: none;
+			width: 90%;
+		}
+	}
+
+	&__drop-item {
+		& a {
+			padding: 12px 16px;
+
+			& span {
+				transition: all 0.2s ease-in;
+			}
+
+			&:hover span {
+				display: block;
+				transform: translateX(5px);
+			}
+			&.drop-active {
+				background-color: $main-color;
+				color: $third-color;
+
+				@include onMobile {
+					color: $white-color;
+				}
+			}				
 		}
 	}
 

@@ -18,7 +18,7 @@ export const postsReducer = (state = initialState, action) => {
       return {
 				...state,
 				posts: [ ...action.payload.articles ],
-				totalPages: action.payload.totalPages
+				totalPages: action.payload.totalPages,
 			}
 
 		case FILTER_BY_CATEGORY:

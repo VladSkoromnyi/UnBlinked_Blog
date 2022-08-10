@@ -54,13 +54,8 @@ export const Home = () => {
 						</a>
 					</p>
 				</div>
-
-				<div className="Home__sidebar-block container">
-					<h4>
-						Twitter Feeds
-					</h4>
-				</div>
 			</div>
+
 			<div className="Home__main">
 				<h2 className='Home__title'>
 					Recent Posts
@@ -101,8 +96,8 @@ export const Home = () => {
 								})
 					}					
 				</ul>
-
 			</div>
+
 			<div className="Home__sidebar">
 				<div className="Home__sidebar-block container">
 					<h4>
@@ -129,12 +124,6 @@ export const Home = () => {
 							})
 						}
 					</ul>	
-				</div>
-
-				<div className="Home__sidebar-block container">
-					<h4>
-						Polls
-					</h4>
 				</div>
 			</div>
 		</div>

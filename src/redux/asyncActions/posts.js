@@ -19,7 +19,7 @@ export const fetchPosts = (page, categ) => {
 					.then(response => response.json())
 					.then(json => dispatch(addAllPostsAction({
 						articles: json.articlceList,
-						totalPages: json.maxPages,
+						totalPages: json.maxPage,
 					})))				
 			// }
 		} catch (error) {

@@ -22,7 +22,7 @@ export const Posts = () => {
 		// }
 	}, [dispatch, currentPage, currentCategory])
 
-	console.log(posts)
+	console.log(totalPages)
 
 	return (
 		<div className='Posts'>
@@ -66,7 +66,7 @@ export const Posts = () => {
 			
 			<div className="Posts__pagination">
 				{
-					totalPages > 1
+					totalPages > 0
 						? <Pagination />
 						: null
 				}

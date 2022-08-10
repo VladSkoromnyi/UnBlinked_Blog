@@ -8,7 +8,7 @@ export const Pagination = () => {
 	const dispatch = useDispatch()
 	const totalPages = useSelector(state => state.posts.totalPages)
 	const currentPage = useSelector(state => state.posts.currentPage)
-	const pages = Array.from({ length: totalPages}, (_, index) => index++)
+	const pages = Array.from({ length: totalPages + 1}, (_, index) => index++)
 
 	return (
 		<div className='Pagination'>
@@ -42,7 +42,7 @@ export const Pagination = () => {
 					</ul>
 				</li>
 				{
-					totalPages - 1 === currentPage
+					totalPages === currentPage
 						? null
 						:	<li 
 								className="Pagination__item"

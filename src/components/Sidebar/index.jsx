@@ -7,12 +7,13 @@ import { ReactComponent as Command } from '../../assets/images/command.svg'
 import { ReactComponent as Hash } from '../../assets/images/hash.svg'
 import { ReactComponent as Video } from '../../assets/images/video.svg'
 import { Link } from 'react-router-dom'
-import { setCurrentCategoryAction } from '../../store/postsReduser'
+import { filterByCategoryAction } from '../../redux/store/postsReduser'
 
 export const Sidebar = () => {
 	const dispatch = useDispatch()
 	const posts = useSelector(state => state.posts.posts)
 	const popularPosts = posts?.filter(item => item.views > 1)
+	// const currentPage = useSelector(state => state.posts.currentPage)
 
 	return (
 		<div className='Sidebar'>
@@ -27,7 +28,8 @@ export const Sidebar = () => {
 						<Link 
 							to={`/posts`}
 							onClick={() => {
-									dispatch(setCurrentCategoryAction('unblinked'))
+									// dispatch(fetchPosts(currentPage))
+									dispatch(filterByCategoryAction('unblinked'))
 								}
 							}
 						>
@@ -41,7 +43,7 @@ export const Sidebar = () => {
 						<Link 
 							to={`/posts`}
 							onClick={() => {
-									dispatch(setCurrentCategoryAction('Bitcoin'))
+									dispatch(filterByCategoryAction('Bitcoin'))
 								}
 							}
 						>
@@ -54,7 +56,7 @@ export const Sidebar = () => {
 					<li className='Sidebar__item'>
 						<Link 
 							to={`/posts`}
-							onClick={() => dispatch(setCurrentCategoryAction('Binance'))}
+							onClick={() => dispatch(filterByCategoryAction('Binance'))}
 						>
 							<div
 								className='crypto_wiki'
@@ -67,7 +69,7 @@ export const Sidebar = () => {
 					<li className='Sidebar__item'>
 						<Link 
 							to={`/posts`}
-							onClick={() => dispatch(setCurrentCategoryAction('Ethereum'))}
+							onClick={() => dispatch(filterByCategoryAction('Ethereum'))}
 						>
 							<div
 								className='traders_guide'
@@ -80,7 +82,7 @@ export const Sidebar = () => {
 					<li className='Sidebar__item'>
 						<Link 
 							to={`/posts`}
-							onClick={() => dispatch(setCurrentCategoryAction('Bitcoin'))}
+							onClick={() => dispatch(filterByCategoryAction('Bitcoin'))}
 						>
 							<div
 								className='trending'

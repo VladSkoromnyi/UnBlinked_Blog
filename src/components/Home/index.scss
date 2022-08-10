@@ -1,1 +1,123 @@
+@import '../../mixins';
+@import '../../variables';
 
+.Home {
+	display: flex;
+	gap: 15px;
+	margin-bottom: 100px;
+
+	@include onSmall {
+		flex-wrap: wrap;
+	}
+
+	&__title {
+		font-weight: 500;
+		font-size: 30px;
+		line-height: 43px;
+		margin: 0 35px 20px;
+	}
+
+	&__sidebar {
+		width: 25%;
+
+		@include onSmall {
+			width: 100%;
+			order: 2;
+		}
+
+		&-block {
+			padding: 21px;
+			margin-bottom: 25px;
+
+			& h4 {
+				margin-bottom: 35px;
+				font-weight: 400;
+				font-size: 14px;
+				line-height: 21px;
+
+				&.about-title {
+					margin-bottom: 6px;
+				}
+			}
+
+			& p {
+				font-weight: 400;
+				font-size: 14px;
+				line-height: 21px;
+				margin-bottom: 23px;
+
+				& a {
+					color: $white-color;
+
+					&:hover {
+						color: $third-color;
+					}
+				}
+			}
+
+			& li.PostMiniCard {
+				font-family: $notosans-font;
+				font-size: 14px;
+				line-height: 21px;
+				
+				& h4 {
+					margin: 0;
+				}
+			}
+		}
+	}
+
+	&__main {
+		width: 50%;
+		
+		@include onSmall {
+			width: 100%;
+			order: 1;
+		}
+
+		& ul {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		& li.PostCard {
+			width: calc( (100% - 22px) / 2 );
+
+			&:nth-child(1n) {
+				margin: 0 0 22px;
+			}
+	
+			&:nth-child(2n) {
+				margin-left: 22px;
+			}
+
+			@include onMedium {
+				width: 100%;
+
+				&:nth-child(1n) {
+					margin: 0 0 22px;
+				}
+			}
+
+			@include onSmall {
+				width: calc( (100% - 22px) / 2 );
+
+				&:nth-child(1n) {
+					margin: 0 0 22px;
+				}
+
+				&:nth-child(2n) {
+					margin-left: 22px;
+				}
+			}
+
+			@include onMediumMobile {
+				width: 100%;
+
+				&:nth-child(1n) {
+					margin: 0 0 22px;
+				}
+			}
+		}
+	}
+}

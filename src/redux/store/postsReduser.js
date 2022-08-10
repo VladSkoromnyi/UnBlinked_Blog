@@ -1,9 +1,9 @@
 const initialState = {
   posts: [],
 	currentPost: {},
-	totalPages: 8,
+	totalPages: 0,
 	currentPage: 0,
-	currentCategory: 'unblinked'
+	currentCategory: '',
 }
 
 const GET_POSTS = 'GET_POSTS'
@@ -18,7 +18,7 @@ export const postsReducer = (state = initialState, action) => {
       return {
 				...state,
 				posts: [ ...action.payload.articles ],
-				// totalPages: action.payload.totalPages,
+				totalPages: action.payload.totalPages
 			}
 
 		case FILTER_BY_CATEGORY:

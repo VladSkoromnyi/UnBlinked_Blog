@@ -73,11 +73,12 @@
 
 	&__category {
 		display: flex;
+		flex-wrap: wrap;
 		gap: 7px;
 		font-weight: 600;
 		font-size: 9.66101px;
 		line-height: 14px;
-		margin: 20px 0 10px 15px;
+		margin: 20px 15px 10px;
 
 		& li {
 			padding: 0.8px 7px;
@@ -102,6 +103,11 @@
 		& li.Bitcoin {
 			color: #FF9F43;
 			background: rgba(255, 159, 67, 0.12);
+		}
+
+		& li.Altcoin {
+			color: $third-color;
+			background: rgba(115, 103, 240, 0.12);
 		}
 	}
 

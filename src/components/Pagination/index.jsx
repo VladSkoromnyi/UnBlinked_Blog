@@ -2,7 +2,7 @@ import './index.scss'
 import { ReactComponent as Left } from '../../assets/images/chevron-left.svg'
 import { ReactComponent as Right } from '../../assets/images/chevron-right.svg'
 import { useDispatch, useSelector } from 'react-redux'
-import { setCurrentPageAction } from '../../store/postsReduser'
+import { setCurrentPageAction } from '../../redux/store/postsReduser'
 
 export const Pagination = () => {
 	const dispatch = useDispatch()
@@ -41,13 +41,16 @@ export const Pagination = () => {
 						}
 					</ul>
 				</li>
-
-				<li 
-					className="Pagination__item"
-					onClick={() => dispatch(setCurrentPageAction(currentPage + 1))}
-				>
-					<Right />
-				</li>
+				{
+					totalPages - 1 === currentPage
+						? null
+						:	<li 
+								className="Pagination__item"
+								onClick={() => dispatch(setCurrentPageAction(currentPage + 1))}
+							>
+								<Right />
+							</li>
+				}
 			</ul>
 		</div>
 	)

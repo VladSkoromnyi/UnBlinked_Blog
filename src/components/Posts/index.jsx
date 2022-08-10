@@ -4,8 +4,7 @@ import { PostCard } from '../PostCard'
 import { TailSpin } from  'react-loader-spinner'
 import { Pagination } from '../Pagination'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchPosts } from '../../asyncActions/posts'
-import { filterByCategoryAction } from '../../store/postsReduser'
+import { fetchPosts } from '../../redux/asyncActions/posts'
 
 export const Posts = () => {
 	const dispatch = useDispatch()
@@ -15,12 +14,12 @@ export const Posts = () => {
 	const currentCategory = useSelector(state => state.posts.currentCategory)
 	
 	useEffect(() => {
-		if (currentCategory) {
+		// if (currentCategory) {
+		// 	dispatch(fetchPosts(currentPage, currentCategory))
+		// 	dispatch(setCurrentCategoryAction(''))
+		// } else {
 			dispatch(fetchPosts(currentPage))
-			dispatch(filterByCategoryAction(currentCategory))
-		} else {
-			dispatch(fetchPosts(currentPage))
-		}
+		// }
 	}, [dispatch, currentPage, currentCategory])
 
 	console.log(posts)
@@ -31,6 +30,7 @@ export const Posts = () => {
 				{
 					posts?.length === 0
 						? <TailSpin 
+								className='loader'
 								color='#7367F0' 
 								width={100}
 								height={100}

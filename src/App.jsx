@@ -5,10 +5,9 @@ import { Post } from './components/Post'
 import { Posts } from './components/Posts'
 import { Sidebar } from './components/Sidebar'
 import './App.scss'
-import { useSelector } from 'react-redux'
+import { Header } from './components/Header'
 
 function App() {
-  const category = useSelector(state => state.posts.category)
 
   return (
     <div className="App">
@@ -18,9 +17,13 @@ function App() {
           <Route 
             index
             path='/'
-            element={<Home />}
+            element={
+              <>
+                <Header />
+                <Home />              
+              </>
+            }
           />
-
           <Route
             path='posts/'
             element={
@@ -38,15 +41,6 @@ function App() {
                 <Post />
               </div>
               }
-          />
-          <Route
-            path={`posts/${category}`}
-            element={
-              <>
-                <Sidebar />
-                <Posts />
-              </>
-            }
           />
         </Routes>   
             

@@ -2,7 +2,7 @@ import './index.scss'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useParams } from 'react-router-dom'
 import { useEffect } from 'react'
-import { fetchPost, fetchPosts } from '../../asyncActions/posts'
+import { fetchPost, fetchPosts } from '../../redux/asyncActions/posts'
 import { ReactComponent as Bookmark } from '../../assets/images/bookmark.svg'
 import { ReactComponent as Comment } from '../../assets/images/comment.svg'
 

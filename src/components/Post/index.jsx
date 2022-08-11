@@ -5,6 +5,7 @@ import { useEffect } from 'react'
 import { fetchPost, fetchPosts } from '../../redux/asyncActions/posts'
 import { ReactComponent as Bookmark } from '../../assets/images/bookmark.svg'
 import { ReactComponent as Comment } from '../../assets/images/comment.svg'
+import { ReactComponent as Share } from '../../assets/images/share-2.svg'
 
 export const Post = () => {
 	const { id } = useParams()
@@ -22,8 +23,6 @@ export const Post = () => {
 		const date = fullDate.split(' ').slice(1).join(' ')
 		return date
 	}
-
-	console.log(post);
 
 	return (
 			<div className='Post container'>
@@ -68,7 +67,9 @@ export const Post = () => {
 					</ul>		
 
 					<div className="Post__text">
-						{post?.text}	
+						<p>
+							{post?.text}
+						</p>	
 					</div>	
 
 					<div className="PostCard__description">
@@ -87,7 +88,7 @@ export const Post = () => {
 						<Link
 							to={`/posts/${id}`}
 						>
-							Read more	
+							<Share />
 						</Link>					
 					</p>
 				</div>

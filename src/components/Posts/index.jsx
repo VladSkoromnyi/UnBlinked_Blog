@@ -16,8 +16,6 @@ export const Posts = () => {
 			dispatch(fetchPosts(currentPage))
 	}, [dispatch, currentPage])
 
-	console.log(posts)
-
 	return (
 		<div className='Posts'>
 			<ul className="Posts__list">

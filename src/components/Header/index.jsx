@@ -21,7 +21,7 @@ export const Header = ( ) =>  {
 			</div>
 
 			<div className="Header__button">
-				<Link to='/'>
+				<Link to='/admin/posts/edit'>
 					<Edit />Edit
 				</Link>
 			</div>

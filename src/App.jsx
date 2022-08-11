@@ -8,6 +8,8 @@ import './App.scss'
 import { Header } from './components/Header'
 import { PostsCategory } from './components/PostsCategory'
 import { SearchBlock } from './components/SearchBlock'
+import { EditList } from './components/Admin/EditList'
+import { EditPage } from './components/Admin/EditPage'
 
 function App() {
 
@@ -71,6 +73,14 @@ function App() {
                 <Sidebar />
               </div>
               }
+          />
+          <Route 
+            path='admin/posts/edit'
+            element={<EditList />}
+          />
+          <Route 
+            path='admin/posts/edit/:id'
+            element={<EditPage />}
           />
         </Routes>   
             

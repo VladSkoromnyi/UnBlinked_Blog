@@ -105,6 +105,7 @@
 		transition: all 0.2s ease-in;
 		transform: translateY(-10px) scaleZ(0);
 		opacity: 0;
+		z-index: 2;
 
 		@include onMobile {
 			border: none;

@@ -11,7 +11,7 @@ import { ReactComponent as Video } from '../../assets/images/video.svg'
 export const Categories = () => {
 	const dispatch = useDispatch()
 	const currentPage = useSelector(state => state.posts.currentPage)
-	
+
 	return (
 		<ul className="Sidebar__list">
 			<li className='Sidebar__item'>
@@ -70,8 +70,8 @@ export const Categories = () => {
 			</li>
 			<li className='Sidebar__item'>
 				<Link 
-					to={`/posts/category/Bitcoin`}
-					onClick={() => dispatch(fetchPosts(currentPage, 'Bitcoin'))}
+					to={`/posts/category/Altcoin`}
+					onClick={() => dispatch(fetchPosts(currentPage, 'Altcoin'))}
 				>
 					<div
 						className='trending'

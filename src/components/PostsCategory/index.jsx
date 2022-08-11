@@ -7,6 +7,7 @@ import { Pagination } from '../Pagination'
 import { PostCard } from '../PostCard'
 import { useLocation, useParams } from 'react-router-dom'
 import { Categories } from '../Categories'
+import { CategoryTitle } from '../CategoryTitle'
 
 export const PostsCategory = () => {
 	const dispatch = useDispatch()
@@ -29,7 +30,7 @@ export const PostsCategory = () => {
 					? <Categories />
 					: null
 			}
-			<h2>{category}</h2>
+			<h2><CategoryTitle /></h2>
 
 			<ul className="Posts__list">
 				{

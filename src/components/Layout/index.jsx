@@ -1,6 +1,7 @@
 import { Footer } from "../Footer"
 import { Logo } from "../Logo"
 import { Navigation } from "../Navigation"
+import { PageTitle } from "../PageTitle"
 
 export const Layout = ({ children }) => {
 	return (
@@ -9,6 +10,7 @@ export const Layout = ({ children }) => {
 
 			<div className="wrapper">
 				<Navigation />
+				<PageTitle />
 
 				{children}
 			</div>

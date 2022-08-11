@@ -5,7 +5,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { fetchPosts } from '../../redux/asyncActions/posts'
 import { Pagination } from '../Pagination'
 import { PostCard } from '../PostCard'
-import { useParams } from 'react-router-dom'
+import { useLocation, useParams } from 'react-router-dom'
+import { Categories } from '../Categories'
 
 export const PostsCategory = () => {
 	const dispatch = useDispatch()
@@ -13,6 +14,9 @@ export const PostsCategory = () => {
 	const posts = useSelector(state => state.posts.posts)
 	const currentPage = useSelector(state => state.posts.currentPage)
 	const totalPages = useSelector(state => state.posts.totalPages)
+
+	const location = useLocation()
+	const isLocationCategory = location.pathname.includes('posts/category')
 	
 	useEffect(() => {
 			dispatch(fetchPosts(currentPage, category))
@@ -20,6 +24,11 @@ export const PostsCategory = () => {
 
 	return (
 		<div className='PostsCategory'>
+			{
+				isLocationCategory
+					? <Categories />
+					: null
+			}
 			<h2>{category}</h2>
 
 			<ul className="Posts__list">

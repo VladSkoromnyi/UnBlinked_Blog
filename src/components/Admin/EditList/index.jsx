@@ -1,10 +1,11 @@
 import './index.scss'
 import { EditListControls } from '../EditListControls'
 import { EditListHeaders } from '../EditListHeaders'
-import { Pagination } from '../../Pagination'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { fetchPostsEdit } from '../../../redux/asyncActions/editPosts'
+import { EditItem } from '../EditItem'
+import { EditPagination } from '../EditPagination'
 
 export const EditList = () => {
 	const dispatch = useDispatch()
@@ -12,7 +13,7 @@ export const EditList = () => {
 	const editPageCurrentPage = useSelector(state => state.edit.editPageCurrentPage)
 
 	useEffect(() => {
-		dispatch(fetchPostsEdit(editPageCurrentPage))
+		dispatch(fetchPostsEdit())
 	}, [dispatch, editPageCurrentPage])
 
 	console.log(editPosts);
@@ -26,43 +27,39 @@ export const EditList = () => {
 				<li className='EditList__item'>
 					<EditListHeaders />
 				</li>
-				<li className='EditList__item'>
+				{
+					editPosts?.map(item => {
+						const {
+							articleId,
+							category,
+							views,
+							title,
+							status,
+							created_date,
+							published_date
+						} = item
 
-					<ul className="EditList__item-list">
-						<li className='number'>
-							#
-						</li>
-						<li className='category'>
-							Category
-						</li>
-						<li className='title'>
-							Title
-						</li>
-						<li className='status'>
-							Status
-						</li>
-						<li className='created'>
-							Created
-						</li>
-						<li className='published'>
-							Published
-						</li>
-						<li className='views'>
-							Views
-						</li>
-						<li className='actions'>
-							Actions
-						</li>
-					</ul>
-
-				</li>
+						return (
+							<EditItem 
+								key={articleId}
+								id={articleId}
+								category={category}
+								views={views}
+								title={title}
+								status={status}
+								created={created_date}
+								published={published_date}
+							/>
+						) 
+					})
+				}
 			</ul>
 			<div className="EditList__bottom">
 				<div className="EditList__bottom-block">
-					Showing 1 to 7 of 100 entries
+					test
 				</div>
 				<div className="EditList__bottom-block">
-					<Pagination />
+					<EditPagination />
 				</div>
 			</div>
 		</div>

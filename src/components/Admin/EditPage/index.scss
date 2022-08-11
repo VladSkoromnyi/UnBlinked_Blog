@@ -1,1 +1,19 @@
+@import '../../../mixins';
+@import '../../../variables';
 
+.EditPage {
+	padding: 0 28px;
+
+	&__block {
+
+		& form {
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+
+			& input, & select {
+				width: calc( 50% - 32px );
+			}			
+		}
+	}
+}

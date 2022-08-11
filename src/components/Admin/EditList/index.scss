@@ -154,4 +154,73 @@
 			}
 		}
 	}
+
+	&__item-list {
+		font-family: $notosans-font;
+
+		& li {
+			font-size: 14px;
+			color: $grey-color;
+			padding: 0 10px;
+
+			&.number {
+				color: $third-color;
+			}
+
+			&.title {
+				text-align: left;
+			}
+
+			&.actions {
+				& svg {
+					width: 14px;
+					height: 14px;
+
+					& * {
+						fill: $grey-color;
+					}
+				}
+			}
+
+			&.category {
+				& ul {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					gap: 10px;
+
+					& li {
+						width: max-content;
+						border-radius: 10px;
+						font-size: 11px;
+
+						&.unblinked {
+							color: $unblinked-category;
+							background: $unblinked-bg-category;
+						}
+				
+						&.Ethereum {
+							color: $ethereum-category;
+							background: $ethereum-bg-category;
+						}
+				
+						&.Binance {
+							color: $binance-category;
+							background: $binance-bg-category;		
+						}
+				
+						&.Bitcoin {
+							color: $bitcoin-category;
+							background: $bitcoin-bg-category;
+						}
+				
+						&.Altcoin {
+							color: $altcoin-category;
+							background: $altcoin-bg-category;
+						}								
+					}
+				}
+			}
+		}
+	}
 }

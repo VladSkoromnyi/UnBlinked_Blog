@@ -1,15 +1,15 @@
 import { BASE_URL } from "../../api/api"
-import { addAllPostsEditAction, setCurrentPostsEditAction } from "../store/editPostsReducer"
+import { 
+	addAllPostsEditAction, 
+	setCurrentPostEditAction 
+} from "../store/editPostsReducer"
 
-export const fetchPostsEdit = (page) => {
+export const fetchPostsEdit = () => {
 	return async dispatch => {
 		try {
-			fetch(`${BASE_URL}mainpage/mainboard/${page}`)
+			fetch(`${BASE_URL}console/list`)
 				.then(response => response.json())
-				.then(json => dispatch(addAllPostsEditAction({
-					articles: json.articlceList,
-					totalPages: json.maxPage,
-				})))
+				.then(json => dispatch(addAllPostsEditAction(json)))
 		} catch (error) {
 			console.error('Error', error)
 		}
@@ -21,7 +21,7 @@ export const fetchPostEdit = (id) => {
 		try {
 			fetch(`${BASE_URL}admin/update/${id}`)
 				.then(response => response.json())
-				.then(json => dispatch(setCurrentPostsEditAction(json)))
+				.then(json => dispatch(setCurrentPostEditAction(json)))
 		} catch (error) {
 			console.error('Error', error)
 		}

@@ -86,28 +86,28 @@
 		}
 
 		& li.unblinked {
-			color: $third-color;
-			background: rgba(115, 103, 240, 0.12);
+			color: $unblinked-category;
+			background: $unblinked-bg-category;
 		}
 
 		& li.Ethereum {
-			color: #00CFE8;
-			background: rgba(0, 207, 232, 0.12);
+			color: $ethereum-category;
+			background: $ethereum-bg-category;
 		}
 
 		& li.Binance {
-			color: #EA5455;
-			background: rgba(234, 84, 85, 0.12);		
+			color: $binance-category;
+			background: $binance-bg-category;		
 		}
 
 		& li.Bitcoin {
-			color: #FF9F43;
-			background: rgba(255, 159, 67, 0.12);
+			color: $bitcoin-category;
+			background: $bitcoin-bg-category;
 		}
 
 		& li.Altcoin {
-			color: $third-color;
-			background: rgba(115, 103, 240, 0.12);
+			color: $altcoin-category;
+			background: $altcoin-bg-category;
 		}
 	}
 

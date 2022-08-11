@@ -12,7 +12,6 @@ import { EditList } from './components/Admin/EditList'
 import { EditPage } from './components/Admin/EditPage'
 
 function App() {
-
   return (
     <div className="App">
       <Layout>   

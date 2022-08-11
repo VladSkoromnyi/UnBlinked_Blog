@@ -1,21 +1,14 @@
 import './index.scss'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { PostMiniCard } from '../PostMiniCard'
 import { SearchInput } from '../SearchInput'
-import { ReactComponent as Watch } from '../../assets/images/watch.svg'
-import { ReactComponent as Cart } from '../../assets/images/shopping-cart.svg'
-import { ReactComponent as Command } from '../../assets/images/command.svg'
-import { ReactComponent as Hash } from '../../assets/images/hash.svg'
-import { ReactComponent as Video } from '../../assets/images/video.svg'
-import { Link, useLocation } from 'react-router-dom'
-import { fetchPosts } from '../../redux/asyncActions/posts'
+import { useLocation } from 'react-router-dom'
+import { Categories } from '../Categories'
 
 export const Sidebar = () => {
-	const dispatch = useDispatch()
 	const location = useLocation()
 	const posts = useSelector(state => state.posts.posts)
 	const popularPosts = posts?.filter(item => item.views > 1)
-	const currentPage = useSelector(state => state.posts.currentPage)
 	const isLocationCategory = location.pathname.includes('posts/category')
 
 	return (
@@ -33,75 +26,7 @@ export const Sidebar = () => {
 					Categories
 				</h4>			
 
-				<ul className="Sidebar__list">
-					<li className='Sidebar__item'>
-						<Link 
-							to={`/posts/category/unblinked`}
-							onClick={() => {
-									dispatch(fetchPosts(currentPage, 'unblinked'))
-								}
-							}
-						>
-							<div className='unblinked_news'>
-								<Watch />
-							</div>
-							<span>UnBlinked News</span>
-						</Link>
-					</li>
-					<li className='Sidebar__item'>
-						<Link 
-							to={`/posts/category/Bitcoin`}
-							onClick={() => {
-									dispatch(fetchPosts(currentPage, 'Bitcoin'))
-								}
-							}
-						>
-							<div className='bitcoin_wiki'>
-								<Cart />
-							</div>
-							<span>Bitcoin Wiki</span>
-						</Link>
-					</li>
-					<li className='Sidebar__item'>
-						<Link 
-							to={`/posts/category/Binance`}
-							onClick={() => dispatch(fetchPosts(currentPage, 'Binance'))}
-						>
-							<div
-								className='crypto_wiki'
-							>
-								<Command />
-							</div>
-							<span>Crypto Wiki</span>
-						</Link>
-					</li>
-					<li className='Sidebar__item'>
-						<Link 
-							to={`/posts/category/Ethereum`}
-							onClick={() => dispatch(fetchPosts(currentPage, 'Ethereum'))}
-						>
-							<div
-								className='traders_guide'
-							>
-								<Hash />
-							</div>
-							<span>Trader's Guide</span>
-						</Link>
-					</li>
-					<li className='Sidebar__item'>
-						<Link 
-							to={`/posts/category/Bitcoin`}
-							onClick={() => dispatch(fetchPosts(currentPage, 'Bitcoin'))}
-						>
-							<div
-								className='trending'
-							>
-								<Video />
-							</div>
-							<span>Trending</span>
-						</Link>
-					</li>
-				</ul>		
+				<Categories />
 			</div>
 
 			<div className="Sidebar__block">

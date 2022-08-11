@@ -1,6 +1,7 @@
 import './index.scss'
 import { ReactComponent as Comment } from '../../assets/images/comment.svg'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 
 export const PostCard = ({
 	id,
@@ -13,6 +14,11 @@ export const PostCard = ({
 	image,
 	userImage,
 }) => {
+	const [isLoad, setIsLoad] = useState(true)
+
+	const handleLoad = () => {
+		setIsLoad(false)
+	}
 
 	const handleDate = (d) => {
 		const fullDate = new Date(d).toDateString()
@@ -25,10 +31,14 @@ export const PostCard = ({
 			className='PostCard container'
 			key={id}
 		>
-			<img 
-				alt='test'
-				src={image}
-			/>
+			<div className={isLoad ? 'no-image' : ''}>
+				<img 
+					alt='test'
+					src={image}
+					onLoad={handleLoad}
+				/>				
+			</div>
+
 
 			<div className="PostCard__content">
 				<h4 className='PostCard__title'>

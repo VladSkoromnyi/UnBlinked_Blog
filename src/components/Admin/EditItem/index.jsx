@@ -19,16 +19,16 @@ export const EditItem = ({
 	status,
 	setLoaded,
 }) => {
-	
+
 
 	const getDate = () => {
 		const today = new Date()
 		return today.toISOString().slice(0, -5)
 	}
 
-	const handleStatus = (id, title, published, status) => {
+	const handleStatus = async (id, title, published, status) => {
 		if (published) {
-			putStatus(id, title, status)
+			await putStatus(id, title, status)
 		}
 	}
 
@@ -76,8 +76,8 @@ export const EditItem = ({
 						<ul className='actions__list'>
 							<li 
 								className='actions__item'
-								onClick={() => {
-										putPublish(id, getDate(), title)
+								onClick={async () => {
+										await putPublish(id, getDate(), title)
 										setLoaded(false)
 									}
 								}
@@ -86,8 +86,8 @@ export const EditItem = ({
 							</li>
 							<li 
 								className='actions__item'
-								onClick={() => {
-										putPublish(id, getDate(), title)
+								onClick={async () => {
+										await putPublish(id, getDate(), title)
 										setLoaded(false)
 									}
 								}
@@ -100,15 +100,15 @@ export const EditItem = ({
 						{
 							status !== 'pending' 
 								? <Eye 
-										onClick={() => {
-												handleStatus(id, title, published, 'pending')
+										onClick={async () => {
+												await handleStatus(id, title, published, 'pending')
 												setLoaded(false)
 											}
 										}
 									/> 
 								: <EyeOff 
-										onClick={() => {
-												handleStatus(id, title, published, 'published')
+										onClick={async () => {
+												await handleStatus(id, title, published, 'published')
 												setLoaded(false)
 											}
 										}

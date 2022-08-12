@@ -1,13 +1,17 @@
 import { Link } from "react-router-dom"
 
 export const EditListControls = () => {
+	
+
 	return (
 		<ul className='EditList__controls-list'>
 			<li className='EditList__controls-item'>
 				<span>
 					Show
 				</span>
-				<select className='show'>
+				<select 
+					className='show'
+				>
 					<option defaultValue>
 						10
 					</option>

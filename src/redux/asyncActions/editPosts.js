@@ -41,13 +41,12 @@ export const putStatus = async (id, title, articleStatus) => {
 				'Content-Type': 'application/json'
 			}
 		})
-		// window.location.reload()
 	} catch (error) {
 		console.error('Error', error)
 	}
 }
 
-export const putPublish = async (id, date) => {
+export const putPublish = async (id, date, title) => {
 	try {
 		await fetch(`${BASE_URL}console/published_date`, {
 			method: "PUT",
@@ -59,7 +58,7 @@ export const putPublish = async (id, date) => {
 				'Content-Type': 'application/json'
 			}
 		})
-		// window.location.reload()
+			.then(putStatus(id, title, 'published'))
 	} catch (error) {
 		console.error('Error', error)
 	}

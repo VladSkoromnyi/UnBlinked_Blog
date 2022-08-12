@@ -11,6 +11,16 @@
 		}
 	}
 
+	& div.no-image {
+		width: 107px;
+		height: 76px;
+		border-radius: 6px 6px 0 0;
+		background-image: url(../../assets/images/no-image.jpeg);
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
 	&__image {
 		width: 107px;
 		height: 76px;

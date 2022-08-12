@@ -19,6 +19,8 @@ export const EditItem = ({
 	status,
 	setLoaded,
 }) => {
+	
+
 	const getDate = () => {
 		const today = new Date()
 		return today.toISOString().slice(0, -5)
@@ -75,7 +77,7 @@ export const EditItem = ({
 							<li 
 								className='actions__item'
 								onClick={() => {
-										putPublish(id, getDate())
+										putPublish(id, getDate(), title)
 										setLoaded(false)
 									}
 								}
@@ -85,7 +87,7 @@ export const EditItem = ({
 							<li 
 								className='actions__item'
 								onClick={() => {
-										putPublish(id, getDate())
+										putPublish(id, getDate(), title)
 										setLoaded(false)
 									}
 								}

@@ -87,7 +87,7 @@ export const EditItem = ({
 							<li 
 								className='actions__item'
 								onClick={async () => {
-										await putPublish(id, getDate(), title)
+										await putPublish(id, "2022-08-13T17:23:06", title)
 										setLoaded(false)
 									}
 								}

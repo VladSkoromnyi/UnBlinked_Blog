@@ -8,7 +8,6 @@ import { ReactComponent as Play } from '../../../assets/images/play.svg'
 import { ReactComponent as Pause } from '../../../assets/images/pause.svg'
 import { putStatus } from '../../../redux/asyncActions/editPosts'
 import { putPublish } from '../../../redux/asyncActions/editPosts'
-import { useState } from 'react'
 
 export const EditItem = ({
 	id,
@@ -18,13 +17,8 @@ export const EditItem = ({
 	published,
 	title,
 	status,
+	setLoaded,
 }) => {
-	const [isShow, setIsShow] = useState()
-
-	const handleToggle = () => {
-		setIsShow(!isShow)
-	}
-
 	const getDate = () => {
 		const today = new Date()
 		return today.toISOString().slice(0, -5)
@@ -75,15 +69,14 @@ export const EditItem = ({
 				<li className='actions'>
 					<span 
 						className='actions__toggle'
-						onClick={() => handleToggle()}
 					>
 						<Send />
-						<ul className={`${isShow ? 'show' : ''} actions__list`}>
+						<ul className='actions__list'>
 							<li 
 								className='actions__item'
 								onClick={() => {
 										putPublish(id, getDate())
-										handleToggle()
+										setLoaded(false)
 									}
 								}
 							>
@@ -93,7 +86,7 @@ export const EditItem = ({
 								className='actions__item'
 								onClick={() => {
 										putPublish(id, getDate())
-										handleToggle()
+										setLoaded(false)
 									}
 								}
 							>
@@ -105,10 +98,18 @@ export const EditItem = ({
 						{
 							status !== 'pending' 
 								? <Eye 
-										onClick={() => handleStatus(id, title, published, 'pending')}
+										onClick={() => {
+												handleStatus(id, title, published, 'pending')
+												setLoaded(false)
+											}
+										}
 									/> 
 								: <EyeOff 
-										onClick={() => handleStatus(id, title, published, 'published')}
+										onClick={() => {
+												handleStatus(id, title, published, 'published')
+												setLoaded(false)
+											}
+										}
 									/>
 						}
 					</span>

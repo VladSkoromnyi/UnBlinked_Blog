@@ -181,6 +181,10 @@
 
 					&.actions__toggle {
 						position: relative;
+
+						&:hover > ul.actions__list {
+							transform: translateY(0) scale(1);
+						}
 					}
 
 					& ul.actions__list {
@@ -199,7 +203,7 @@
 						backdrop-filter: blur(4px);
 						border-radius: 5px;
 
-						&.show {
+						&:hover {
 							transform: translateY(0) scale(1);
 						}
 					}

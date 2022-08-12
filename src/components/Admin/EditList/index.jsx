@@ -10,6 +10,7 @@ import { EditPagination } from '../EditPagination'
 export const EditList = () => {
 	const dispatch = useDispatch()
 	const editPosts = useSelector(state => state.edit.editPagePosts)
+	const [loaded, setLoaded] = useState(false)
 
 	const [page, setPage] = useState({
 		currentPage: 1,
@@ -20,8 +21,12 @@ export const EditList = () => {
 	const firstItem = lastItem - page.itemsOnPage
 
 	useEffect(() => {
+		if (loaded) {
+			return
+		}
 		dispatch(fetchPostsEdit())
-	}, [dispatch])
+		setLoaded(true)
+	}, [dispatch, editPosts, loaded])
 
 	return (
 		<div className='EditList container'>
@@ -58,6 +63,7 @@ export const EditList = () => {
 								status={status}
 								created={created_date}
 								published={published_date}
+								setLoaded={setLoaded}
 							/>
 						) 
 					})

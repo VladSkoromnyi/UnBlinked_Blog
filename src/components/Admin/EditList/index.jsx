@@ -23,13 +23,15 @@ export const EditList = () => {
 		dispatch(fetchPostsEdit())
 	}, [dispatch])
 
-	console.log(editPosts);
-
 	return (
 		<div className='EditList container'>
 			<ul className='EditList__list'>
 				<li className='EditList__item'>
-					<EditListControls />
+					<EditListControls 
+						perPage={page.itemsOnPage}
+						setPage={setPage}
+						totalPosts={editPosts.length}
+					/>
 				</li>
 				<li className='EditList__item'>
 					<EditListHeaders />

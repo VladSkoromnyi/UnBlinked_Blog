@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom"
 
-export const EditListControls = () => {
-	
+export const EditListControls = ({ perPage, setPage, totalPosts }) => {
+	const onPageValues = []
+
+	for (let i = 10; i <= Math.ceil(totalPosts / 10) * 10; i += 10) {
+		onPageValues.push(i)
+	}
 
 	return (
 		<ul className='EditList__controls-list'>
@@ -11,16 +15,10 @@ export const EditListControls = () => {
 				</span>
 				<select 
 					className='show'
+					value={perPage}
+					onChange={({ target }) => setPage(prev => ({...prev, itemsOnPage: target.value}))}
 				>
-					<option defaultValue>
-						10
-					</option>
-					<option>
-						20
-					</option>
-					<option>
-						30
-					</option>
+					{onPageValues.map(item => <option key={item}>{item}</option>)}
 				</select>
 
 				<Link to='add'>

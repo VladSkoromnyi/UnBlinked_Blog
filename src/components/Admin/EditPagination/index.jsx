@@ -14,8 +14,6 @@ export const EditPagination = ({
 		pageNumbers.push(i)
 	}
 
-	console.log(currentPage);
-
 	return (
 		<div className='EditPagination Pagination'>
 			<ul className='Pagination__list'>
@@ -29,7 +27,6 @@ export const EditPagination = ({
 							</li>
 						: null
 				}
-
 				<li className="EditPagination__item Pagination__item pages">
 					<ul className="Pagination__item-list">
 						{

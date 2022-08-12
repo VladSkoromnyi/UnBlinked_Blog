@@ -1,6 +1,14 @@
 import '../EditList/index.scss'
 import { Link } from 'react-router-dom'
 import { ReactComponent as Edit } from '../../../assets/images/edit.svg'
+import { ReactComponent as Eye } from '../../../assets/images/eye.svg'
+import { ReactComponent as EyeOff } from '../../../assets/images/eye-off.svg'
+import { ReactComponent as Send } from '../../../assets/images/send.svg'
+import { ReactComponent as Play } from '../../../assets/images/play.svg'
+import { ReactComponent as Pause } from '../../../assets/images/pause.svg'
+import { putStatus } from '../../../redux/asyncActions/editPosts'
+import { putPublish } from '../../../redux/asyncActions/editPosts'
+import { useState } from 'react'
 
 export const EditItem = ({
 	id,
@@ -11,6 +19,23 @@ export const EditItem = ({
 	title,
 	status,
 }) => {
+	const [isShow, setIsShow] = useState()
+
+	const handleToggle = () => {
+		setIsShow(!isShow)
+	}
+
+	const getDate = () => {
+		const today = new Date()
+		return today.toISOString().slice(0, -5)
+	}
+
+	const handleStatus = (id, title, published, status) => {
+		if (published) {
+			putStatus(id, title, status)
+		}
+	}
+
 	return (
 		<li className='EditList__item'>
 			<ul className="EditList__item-list">
@@ -48,6 +73,45 @@ export const EditItem = ({
 					{views || '-'}
 				</li>
 				<li className='actions'>
+					<span 
+						className='actions__toggle'
+						onClick={() => handleToggle()}
+					>
+						<Send />
+						<ul className={`${isShow ? 'show' : ''} actions__list`}>
+							<li 
+								className='actions__item'
+								onClick={() => {
+										putPublish(id, getDate())
+										handleToggle()
+									}
+								}
+							>
+								<Play />Instant Publish
+							</li>
+							<li 
+								className='actions__item'
+								onClick={() => {
+										putPublish(id, getDate())
+										handleToggle()
+									}
+								}
+							>
+								<Pause />Scheduled Publish
+							</li>
+						</ul>
+					</span>
+					<span>
+						{
+							status !== 'pending' 
+								? <Eye 
+										onClick={() => handleStatus(id, title, published, 'pending')}
+									/> 
+								: <EyeOff 
+										onClick={() => handleStatus(id, title, published, 'published')}
+									/>
+						}
+					</span>
 					<Link to={`${id}`}>
 						<Edit />
 					</Link>

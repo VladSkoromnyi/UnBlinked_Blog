@@ -27,3 +27,41 @@ export const fetchPostEdit = (id) => {
 		}
 	}
 }
+
+export const putStatus = async (id, title, articleStatus) => {
+	try {
+		await fetch(`${BASE_URL}console/is_published`, {
+			method: "PUT",
+			body: JSON.stringify({
+				"articleId": `${id}`,
+				"title": `${title}`,
+				"status": `${articleStatus}`,
+			}),
+			headers: {
+				'Content-Type': 'application/json'
+			}
+		})
+		window.location.reload()
+	} catch (error) {
+		console.error('Error', error)
+	}
+}
+
+export const putPublish = async (id, date) => {
+	try {
+		await fetch(`${BASE_URL}console/published_date`, {
+			method: "PUT",
+			body: JSON.stringify({
+				"articleId": `${id}`,
+				"published_date": `${date}`,
+			}),
+			headers: {
+				'Content-Type': 'application/json'
+			}
+		})
+		window.location.reload()
+	} catch (error) {
+		console.error('Error', error)
+	}
+}
+

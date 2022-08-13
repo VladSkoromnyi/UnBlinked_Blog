@@ -1,3 +1,3 @@
 # UnBlinked Blog
 
-[DEMO](https://vladskoromnyi.github.io/UnBlinked_Blog/)
+[DEMO](https://un-blinked-blog.vercel.app/)
